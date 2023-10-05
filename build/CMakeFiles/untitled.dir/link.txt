@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/untitled.dir/main.cpp.o -o untitled  Includes/libIncludes.a Libraries/ZWH_App/libZWH_App.a Libraries/ZWH_Class/libZWH_Class.a 

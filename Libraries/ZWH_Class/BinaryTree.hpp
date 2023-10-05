@@ -47,10 +47,11 @@ public:
 
     void preOrder_seq(Node* T, const int& function);//前序遍历（顺序）（法一）（还是用法一吧。。。）
     void preOrder_seq_1(Node* T, const int& function);//前序遍历（顺序）（法二）
+    void preOrder_seq_2(Node* T, const int& function);//前序遍历（顺序）（法三）
     void inOrder_seq(Node* T, const int& function);//中序遍历（顺序）（法一）
     void postOrder_seq(Node* T, const int& function);//后序遍历（顺序）（法一）
 
-    void tmp(Node* T, const int& function);
+    // void tmp(Node* T, const int& function);
 };
 
 #include <BinaryTree.cpp>

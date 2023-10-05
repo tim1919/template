@@ -140,7 +140,34 @@ void LinkBinaryTree<ValueType>::postOrder_recurse(Node* const& T, const int& fun
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::preOrder_seq(Node* T, const int& function)//前序遍历（顺序）（法一）
+void LinkBinaryTree<ValueType>::preOrder_seq(Node* T, const int& function)
+{
+    Stack<Node*> myStack;
+    myStack.initStack_SQ();
+
+    while (1)
+    {
+        if (myStack.isEmpty() && 0 == T)
+            break;
+
+        if (T)//操作1：往左下走
+        {
+            func(function, T);
+            myStack.push_back(T);         
+            T = T->lchild;//入栈+访左
+        }
+        else//操作2：往上走（左右都有可能，且不一定只有1步） + 往右走
+        {
+            T = myStack.pop_back();
+            T = T->rchild;//出栈+访右
+        }
+    }
+
+    myStack.destroyStack();
+}
+
+template <typename ValueType>
+void LinkBinaryTree<ValueType>::preOrder_seq_1(Node* T, const int& function)//前序遍历（顺序）（法一）
 {
     Node* node[depth] = {0};
     int top = 0;
@@ -173,7 +200,7 @@ void LinkBinaryTree<ValueType>::preOrder_seq(Node* T, const int& function)//前�
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::preOrder_seq_1(Node* T, const int& function)//前序遍历（顺序）（法二）（容易理解）
+void LinkBinaryTree<ValueType>::preOrder_seq_2(Node* T, const int& function)//前序遍历（顺序）（法二）（容易理解）
 {
     Node* node[depth] = {0};//注意：这个队列的第一个值一定得是0！（第一个值其实不存任何地址，置0是为了函数最后的if(0 == T)能够退出）
     int top = 0;
@@ -211,72 +238,73 @@ void LinkBinaryTree<ValueType>::preOrder_seq_1(Node* T, const int& function)//�
 template <typename ValueType>
 void LinkBinaryTree<ValueType>::inOrder_seq(Node* T, const int& function)//中序遍历（顺序）（法二）（容易理解）
 {
-    Node* node[depth] = {0};
-    int top = 0;
+    Stack<Node*> myStack;
+    myStack.initStack_SQ();
+
     while (1)
     {
-        while (1)//实现功能+入栈
-        {
-            if (0 == T)
-                break;
-
-            node[top] = T;
-            ++top;//入栈条件：二叉树指针非空
-
-            T = T->lchild;
-        }
-
-        if (top > 0)//退栈+向右（注意：是平行向右！）
-        {
-            --top;//出栈条件：二叉树指针为空，且栈非空
-
-            T = node[top];
-            func(function, T);//执行功能
-            T = T->rchild;//指针平行向右
-        }
-
-        if (top <= 0 && 0 == T)//若栈和指针均空则结束
+        if (myStack.isEmpty() && 0 == T)
             break;
+
+        if (T)
+        {
+            myStack.push_back(T);
+            T = T->lchild;//入栈+访左
+        }
+        else
+        {
+            T = myStack.pop_back();
+            func(function, T);
+            T = T->rchild;//出栈+访右
+        }
     }
+
+    myStack.destroyStack();
 }
 
 template <typename ValueType>
 void LinkBinaryTree<ValueType>::postOrder_seq(Node* T, const int& function)//后序遍历（顺序）（法二）（容易理解）
 {
-    Node* node[depth] = {0};
-    int top = 0;
+    Stack<Node*> myStack;
+    Node* tmp = 0;
+    myStack.initStack_SQ();
+
     while (1)
     {
-        while (1)//实现功能+入栈
-        {
-            if (0 == T)
-                break;
-
-            node[top] = T;
-            ++top;//入栈条件：二叉树指针非空
-
-            T = T->lchild;
-        }
-
-        if (top > 0)//退栈+向右（注意：是平行向右！）
-        {
-            --top;//出栈条件：二叉树指针为空，且栈非空
-
-            T = node[top];
-            func(function, T);//执行功能
-            T = T->rchild;//指针平行向右
-        }
-
-        if (top <= 0 && 0 == T)//若栈和指针均空则结束
+        if (myStack.isEmpty() && 0 == T)
             break;
+
+        if (T)
+        {
+            myStack.push_back(T);
+            T = T->lchild;//入栈+访左
+        }
+        else
+        {
+            T = myStack.getTop();
+            if (T->rchild != 0 && T->rchild != tmp)
+            {
+                // if (tmp != T->rchild)
+                // {
+                //     func(function, T);
+                // }
+                T = T->rchild;
+            }
+            else if (T->rchild == 0 || T->rchild == tmp)
+            {
+                // if (T->rchild == tmp)
+                // {
+                //     func(function, T);
+                // }
+                T = 0;
+                tmp = myStack.pop_back();
+                func(function, tmp);
+            }            
+        }
     }
+
+    myStack.destroyStack();
+
 }
 
-// template <typename ValueType>
-// void LinkBinaryTree<ValueType>::tmp(Node* T, const int& function)//后序遍历（顺序）（法二）（容易理解）
-// {
-//     while (1)
-//     {
-//         if ()
-//     }
-// }
+

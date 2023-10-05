@@ -1,0 +1,2 @@
+/usr/bin/ar qc libZWH_App.a CMakeFiles/ZWH_App.dir/string_zwh.cpp.o CMakeFiles/ZWH_App.dir/collection_zwh.cpp.o "CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.o"
+/usr/bin/ranlib libZWH_App.a
