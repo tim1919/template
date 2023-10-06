@@ -1,4 +1,4 @@
-# Install script for directory: /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class
+# Install script for directory: /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

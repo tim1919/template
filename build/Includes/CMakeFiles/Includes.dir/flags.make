@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zwh/myStudies/C++/Tree/Includes/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/.
+CXX_INCLUDES = -I/home/zwh/myStudies/C++/git/template/Includes/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/.
 
 CXX_FLAGS = -g
 

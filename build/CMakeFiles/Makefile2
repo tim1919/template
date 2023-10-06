@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/Tree
+CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/git/template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/Tree/build
+CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/git/template/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -136,14 +136,14 @@ CMakeFiles/untitled.dir/all: Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/all
 CMakeFiles/untitled.dir/all: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=11,12 "Built target untitled"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=11,12 "Built target untitled"
 .PHONY : CMakeFiles/untitled.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/untitled.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/untitled.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 0
 .PHONY : CMakeFiles/untitled.dir/rule
 
 # Convenience name for target.
@@ -163,14 +163,14 @@ Includes/CMakeFiles/Includes.dir/all: Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/a
 Includes/CMakeFiles/Includes.dir/all: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/all
 	$(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/depend
 	$(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=1,2 "Built target Includes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=1,2 "Built target Includes"
 .PHONY : Includes/CMakeFiles/Includes.dir/all
 
 # Build rule for subdir invocation for target.
 Includes/CMakeFiles/Includes.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/CMakeFiles/Includes.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 0
 .PHONY : Includes/CMakeFiles/Includes.dir/rule
 
 # Convenience name for target.
@@ -189,14 +189,14 @@ Includes/CMakeFiles/Includes.dir/clean:
 Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/all:
 	$(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/depend
 	$(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=3,4,5,6 "Built target ZWH_App"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=3,4,5,6 "Built target ZWH_App"
 .PHONY : Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/all
 
 # Build rule for subdir invocation for target.
 Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 0
 .PHONY : Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/rule
 
 # Convenience name for target.
@@ -215,14 +215,14 @@ Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/clean:
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/all:
 	$(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/depend
 	$(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=7,8,9,10 "Built target ZWH_Class"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=7,8,9,10 "Built target ZWH_Class"
 .PHONY : Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/all
 
 # Build rule for subdir invocation for target.
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 0
 .PHONY : Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/rule
 
 # Convenience name for target.

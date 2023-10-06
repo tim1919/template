@@ -1,7 +1,7 @@
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o: \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/maze.cpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/maze.cpp \
  /usr/include/stdc-predef.h \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/./maze.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/./maze.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -151,8 +151,8 @@ Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/./myStack.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/./myStack.hpp \
  /usr/include/string.h /usr/include/strings.h \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/./myStack.cpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/./myQueue.hpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/./myQueue.cpp
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/./myStack.cpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/./myQueue.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/./myQueue.cpp

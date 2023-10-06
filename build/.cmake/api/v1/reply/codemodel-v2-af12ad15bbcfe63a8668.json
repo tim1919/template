@@ -96,28 +96,28 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "Includes::@1e8596d4803168c21072",
-					"jsonFile" : "target-Includes-Debug-9f1d5a230af14af62372.json",
+					"jsonFile" : "target-Includes-Debug-35c08ecc935b588a0419.json",
 					"name" : "Includes",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "ZWH_App::@f4ecb035357582f1ff0a",
-					"jsonFile" : "target-ZWH_App-Debug-691c9544096622eccd9b.json",
+					"jsonFile" : "target-ZWH_App-Debug-579a6a06c3b007014991.json",
 					"name" : "ZWH_App",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "ZWH_Class::@f1db2646e3656a4d410f",
-					"jsonFile" : "target-ZWH_Class-Debug-19369b541aa12ac6f9b2.json",
+					"jsonFile" : "target-ZWH_Class-Debug-9b6202fea56195cded07.json",
 					"name" : "ZWH_Class",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-7b12b215a94282c90732.json",
+					"jsonFile" : "target-untitled-Debug-751da32dd06b6c4f8fa1.json",
 					"name" : "untitled",
 					"projectIndex" : 0
 				}
@@ -127,8 +127,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/zwh/myStudies/C++/Tree/build",
-		"source" : "/home/zwh/myStudies/C++/Tree"
+		"build" : "/home/zwh/myStudies/C++/git/template/build",
+		"source" : "/home/zwh/myStudies/C++/git/template"
 	},
 	"version" : 
 	{

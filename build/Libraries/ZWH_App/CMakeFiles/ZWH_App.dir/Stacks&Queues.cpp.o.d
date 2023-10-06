@@ -1,7 +1,7 @@
 Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.o: \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/Stacks&Queues.cpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/Stacks&Queues.cpp \
  /usr/include/stdc-predef.h \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/./Stacks&Queues.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/./Stacks&Queues.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -148,6 +148,6 @@ Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/myStack.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/myStack.hpp \
  /usr/include/string.h /usr/include/strings.h \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/myStack.cpp
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/myStack.cpp

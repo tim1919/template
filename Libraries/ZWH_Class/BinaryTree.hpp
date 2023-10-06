@@ -28,17 +28,25 @@ private:
     int depth = 0;
     int length = 0;
 
+    int tmp = 0;
+    int i_max = 0;
+
 
     Node* create_recurse(int depth);//递归
+    bool create_recurse_scanf(Node*& T);
     void func(const int& func, Node* const& T);
 public:
 
 #define PRINTF 1
 #define SCANF 2
+#define LEFT 0
+#define RIGHT 1
 
     ~LinkBinaryTree(void);
     bool create(const int& depth);
-    Node* root(void);
+    bool create_scanf(void);
+    Node* root(void);//获取根结点
+    Node* get(Node* const& T, const int& LorR);
 
 
     void preOrder_recurse(Node* const& T, const int& function);//前序遍历（递归）
@@ -52,6 +60,7 @@ public:
     void postOrder_seq(Node* T, const int& function);//后序遍历（顺序）（法一）
 
     // void tmp(Node* T, const int& function);
+    void test(void);
 };
 
 #include <BinaryTree.cpp>

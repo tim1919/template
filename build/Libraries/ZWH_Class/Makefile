@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/Tree
+CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/git/template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/Tree/build
+CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/git/template/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class//CMakeFiles/progress.marks
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 0
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class//CMakeFiles/progress.marks
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/clean
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/preinstall
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/preinstall
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/rule:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/rule
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/rule
 .PHONY : Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ ZWH_Class: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/rule
 
 # fast build rule for target.
 ZWH_Class/fast:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build
 .PHONY : ZWH_Class/fast
 
 BankAccount.o: BankAccount.cpp.o
@@ -135,7 +135,7 @@ BankAccount.o: BankAccount.cpp.o
 
 # target to build an object file
 BankAccount.cpp.o:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o
 .PHONY : BankAccount.cpp.o
 
 BankAccount.i: BankAccount.cpp.i
@@ -143,7 +143,7 @@ BankAccount.i: BankAccount.cpp.i
 
 # target to preprocess a source file
 BankAccount.cpp.i:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.i
 .PHONY : BankAccount.cpp.i
 
 BankAccount.s: BankAccount.cpp.s
@@ -151,7 +151,7 @@ BankAccount.s: BankAccount.cpp.s
 
 # target to generate assembly for a file
 BankAccount.cpp.s:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.s
 .PHONY : BankAccount.cpp.s
 
 RandomBag.o: RandomBag.cpp.o
@@ -159,7 +159,7 @@ RandomBag.o: RandomBag.cpp.o
 
 # target to build an object file
 RandomBag.cpp.o:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o
 .PHONY : RandomBag.cpp.o
 
 RandomBag.i: RandomBag.cpp.i
@@ -167,7 +167,7 @@ RandomBag.i: RandomBag.cpp.i
 
 # target to preprocess a source file
 RandomBag.cpp.i:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.i
 .PHONY : RandomBag.cpp.i
 
 RandomBag.s: RandomBag.cpp.s
@@ -175,7 +175,7 @@ RandomBag.s: RandomBag.cpp.s
 
 # target to generate assembly for a file
 RandomBag.cpp.s:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.s
 .PHONY : RandomBag.cpp.s
 
 maze.o: maze.cpp.o
@@ -183,7 +183,7 @@ maze.o: maze.cpp.o
 
 # target to build an object file
 maze.cpp.o:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o
 .PHONY : maze.cpp.o
 
 maze.i: maze.cpp.i
@@ -191,7 +191,7 @@ maze.i: maze.cpp.i
 
 # target to preprocess a source file
 maze.cpp.i:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.i
 .PHONY : maze.cpp.i
 
 maze.s: maze.cpp.s
@@ -199,7 +199,7 @@ maze.s: maze.cpp.s
 
 # target to generate assembly for a file
 maze.cpp.s:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.s
 .PHONY : maze.cpp.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

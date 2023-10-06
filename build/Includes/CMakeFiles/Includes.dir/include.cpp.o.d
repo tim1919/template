@@ -1,7 +1,7 @@
 Includes/CMakeFiles/Includes.dir/include.cpp.o: \
- /home/zwh/myStudies/C++/Tree/Includes/include.cpp \
+ /home/zwh/myStudies/C++/git/template/Includes/include.cpp \
  /usr/include/stdc-predef.h \
- /home/zwh/myStudies/C++/Tree/Includes/./include.hpp \
+ /home/zwh/myStudies/C++/git/template/Includes/./include.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -149,7 +149,7 @@ Includes/CMakeFiles/Includes.dir/include.cpp.o: \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/./collection_zwh.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/./collection_zwh.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
@@ -171,17 +171,17 @@ Includes/CMakeFiles/Includes.dir/include.cpp.o: \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/list.tcc \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/./Stacks&Queues.hpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/myStack.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/./Stacks&Queues.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/myStack.hpp \
  /usr/include/string.h /usr/include/strings.h \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/myStack.cpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/./string_zwh.hpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/BankAccount.hpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/BinaryTree.hpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/BinaryTree.cpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/linearList.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/myStack.cpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/./string_zwh.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/BankAccount.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/BinaryTree.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/BinaryTree.cpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/linearList.hpp \
  /usr/include/c++/11/stdlib.h \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/linearList.cpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/maze.hpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/myQueue.hpp \
- /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class/myQueue.cpp
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/linearList.cpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/maze.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/myQueue.hpp \
+ /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class/myQueue.cpp

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/Tree
+CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/git/template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/Tree/build
+CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/git/template/build
 
 # Include any dependencies generated for this target.
 include Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/depend.make
@@ -72,44 +72,44 @@ include Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/flags.make
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/flags.make
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o: ../Libraries/ZWH_Class/RandomBag.cpp
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o -MF CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o.d -o CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/RandomBag.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o"
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o -MF CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o.d -o CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/RandomBag.cpp
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZWH_Class.dir/RandomBag.cpp.i"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/RandomBag.cpp > CMakeFiles/ZWH_Class.dir/RandomBag.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/RandomBag.cpp > CMakeFiles/ZWH_Class.dir/RandomBag.cpp.i
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/RandomBag.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZWH_Class.dir/RandomBag.cpp.s"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/RandomBag.cpp -o CMakeFiles/ZWH_Class.dir/RandomBag.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/RandomBag.cpp -o CMakeFiles/ZWH_Class.dir/RandomBag.cpp.s
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/flags.make
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o: ../Libraries/ZWH_Class/BankAccount.cpp
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o -MF CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o.d -o CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/BankAccount.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o"
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o -MF CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o.d -o CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/BankAccount.cpp
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZWH_Class.dir/BankAccount.cpp.i"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/BankAccount.cpp > CMakeFiles/ZWH_Class.dir/BankAccount.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/BankAccount.cpp > CMakeFiles/ZWH_Class.dir/BankAccount.cpp.i
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/BankAccount.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZWH_Class.dir/BankAccount.cpp.s"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/BankAccount.cpp -o CMakeFiles/ZWH_Class.dir/BankAccount.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/BankAccount.cpp -o CMakeFiles/ZWH_Class.dir/BankAccount.cpp.s
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/flags.make
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o: ../Libraries/ZWH_Class/maze.cpp
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o -MF CMakeFiles/ZWH_Class.dir/maze.cpp.o.d -o CMakeFiles/ZWH_Class.dir/maze.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/maze.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o"
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o -MF CMakeFiles/ZWH_Class.dir/maze.cpp.o.d -o CMakeFiles/ZWH_Class.dir/maze.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/maze.cpp
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZWH_Class.dir/maze.cpp.i"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/maze.cpp > CMakeFiles/ZWH_Class.dir/maze.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/maze.cpp > CMakeFiles/ZWH_Class.dir/maze.cpp.i
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZWH_Class.dir/maze.cpp.s"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/maze.cpp -o CMakeFiles/ZWH_Class.dir/maze.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/maze.cpp -o CMakeFiles/ZWH_Class.dir/maze.cpp.s
 
 # Object files for target ZWH_Class
 ZWH_Class_OBJECTS = \
@@ -125,19 +125,19 @@ Libraries/ZWH_Class/libZWH_Class.a: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir
 Libraries/ZWH_Class/libZWH_Class.a: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/maze.cpp.o
 Libraries/ZWH_Class/libZWH_Class.a: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build.make
 Libraries/ZWH_Class/libZWH_Class.a: Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zwh/myStudies/C++/Tree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libZWH_Class.a"
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && $(CMAKE_COMMAND) -P CMakeFiles/ZWH_Class.dir/cmake_clean_target.cmake
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ZWH_Class.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zwh/myStudies/C++/git/template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libZWH_Class.a"
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && $(CMAKE_COMMAND) -P CMakeFiles/ZWH_Class.dir/cmake_clean_target.cmake
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ZWH_Class.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build: Libraries/ZWH_Class/libZWH_Class.a
 .PHONY : Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/build
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/clean:
-	cd /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class && $(CMAKE_COMMAND) -P CMakeFiles/ZWH_Class.dir/cmake_clean.cmake
+	cd /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class && $(CMAKE_COMMAND) -P CMakeFiles/ZWH_Class.dir/cmake_clean.cmake
 .PHONY : Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/clean
 
 Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/depend:
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zwh/myStudies/C++/Tree /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class /home/zwh/myStudies/C++/Tree/build /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zwh/myStudies/C++/git/template /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class /home/zwh/myStudies/C++/git/template/build /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Libraries/ZWH_Class/CMakeFiles/ZWH_Class.dir/depend
 

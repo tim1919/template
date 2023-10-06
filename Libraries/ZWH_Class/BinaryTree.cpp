@@ -63,6 +63,26 @@ typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::create_recu
 }
 
 template <typename ValueType>
+bool LinkBinaryTree<ValueType>::create_recurse_scanf(Node*& T)
+{
+    char ch;
+    scanf("%c", &ch);
+    if (' ' == ch)
+    {
+        T = 0;
+    }
+    else
+    {
+        T = new Node[1];
+        T->data = ch;
+        create_recurse_scanf(T->lchild);
+        create_recurse_scanf(T->rchild);
+    }
+    return 1;
+}
+
+
+template <typename ValueType>
 void LinkBinaryTree<ValueType>::func(const int& func, Node* const& T)
 {
     switch (func)
@@ -99,11 +119,48 @@ bool LinkBinaryTree<ValueType>::create(const int& depth)
 }
 
 template <typename ValueType>
+bool LinkBinaryTree<ValueType>::create_scanf(void)
+{
+    create_recurse_scanf(Root);
+    return 1;
+}
+
+
+template <typename ValueType>
 typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::root(void)//这是什么语法？？？能过编译？？？
 {
     return Root;
 }
 
+template <typename ValueType>
+typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::get(Node* const& T, const int& LorR)
+{
+    if (T == 0)
+    {
+        std::cout << "Node address error!" << std::endl;
+        return 0;
+    }
+
+    switch (LorR)
+    {
+        case LEFT:
+        {
+            return T->lchild;
+            break;
+        }
+        case RIGHT:
+        {
+            return T->rchild;
+            break;
+        }
+        default:
+        {
+            std::cout << "error! function should take LEFT or RIGHT!" << std::endl;
+            return 0;
+            break;
+        }
+    }
+}
 
 template <typename ValueType>
 void LinkBinaryTree<ValueType>::preOrder_recurse(Node* const& T, const int& function)
@@ -111,9 +168,15 @@ void LinkBinaryTree<ValueType>::preOrder_recurse(Node* const& T, const int& func
     if (T != 0)
     {
         func(function, T);
+        ++tmp;
+        test();
         preOrder_recurse(T->lchild, function);
+        ++tmp;
+        test();
         preOrder_recurse(T->rchild, function);
     }
+    --tmp;
+    test();
 }
 
 
@@ -299,7 +362,7 @@ void LinkBinaryTree<ValueType>::postOrder_seq(Node* T, const int& function)//后
                 T = 0;
                 tmp = myStack.pop_back();
                 func(function, tmp);
-            }            
+            }
         }
     }
 
@@ -307,4 +370,12 @@ void LinkBinaryTree<ValueType>::postOrder_seq(Node* T, const int& function)//后
 
 }
 
-
+template <typename ValueType>
+void LinkBinaryTree<ValueType>::test(void)
+{
+    if (tmp > i_max)
+    {
+        i_max = tmp;
+    }
+    std::cout << "i_max: " << i_max << std::endl;
+}

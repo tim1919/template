@@ -1,42 +1,42 @@
 [
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Includes/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/. -g -o CMakeFiles/untitled.dir/main.cpp.o -c /home/zwh/myStudies/C++/Tree/main.cpp",
-  "file": "/home/zwh/myStudies/C++/Tree/main.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Includes/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/. -g -o CMakeFiles/untitled.dir/main.cpp.o -c /home/zwh/myStudies/C++/git/template/main.cpp",
+  "file": "/home/zwh/myStudies/C++/git/template/main.cpp"
 },
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build/Includes",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Includes/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/. -g -o CMakeFiles/Includes.dir/include.cpp.o -c /home/zwh/myStudies/C++/Tree/Includes/include.cpp",
-  "file": "/home/zwh/myStudies/C++/Tree/Includes/include.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build/Includes",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Includes/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/. -g -o CMakeFiles/Includes.dir/include.cpp.o -c /home/zwh/myStudies/C++/git/template/Includes/include.cpp",
+  "file": "/home/zwh/myStudies/C++/git/template/Includes/include.cpp"
 },
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_App",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class -g -o CMakeFiles/ZWH_App.dir/string_zwh.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/string_zwh.cpp",
-  "file": "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/string_zwh.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_App",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class -g -o CMakeFiles/ZWH_App.dir/string_zwh.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/string_zwh.cpp",
+  "file": "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/string_zwh.cpp"
 },
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_App",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class -g -o CMakeFiles/ZWH_App.dir/collection_zwh.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/collection_zwh.cpp",
-  "file": "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/collection_zwh.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_App",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class -g -o CMakeFiles/ZWH_App.dir/collection_zwh.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/collection_zwh.cpp",
+  "file": "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/collection_zwh.cpp"
 },
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_App",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class -g -o \"CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.o\" -c \"/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/Stacks&Queues.cpp\"",
-  "file": "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/Stacks&Queues.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_App",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/. -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class -g -o \"CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.o\" -c \"/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/Stacks&Queues.cpp\"",
+  "file": "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/Stacks&Queues.cpp"
 },
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/. -g -o CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/RandomBag.cpp",
-  "file": "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/RandomBag.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/. -g -o CMakeFiles/ZWH_Class.dir/RandomBag.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/RandomBag.cpp",
+  "file": "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/RandomBag.cpp"
 },
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/. -g -o CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/BankAccount.cpp",
-  "file": "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/BankAccount.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/. -g -o CMakeFiles/ZWH_Class.dir/BankAccount.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/BankAccount.cpp",
+  "file": "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/BankAccount.cpp"
 },
 {
-  "directory": "/home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_Class",
-  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/. -g -o CMakeFiles/ZWH_Class.dir/maze.cpp.o -c /home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/maze.cpp",
-  "file": "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/maze.cpp"
+  "directory": "/home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_Class",
+  "command": "/usr/bin/g++  -I/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/. -g -o CMakeFiles/ZWH_Class.dir/maze.cpp.o -c /home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/maze.cpp",
+  "file": "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/maze.cpp"
 }
 ]

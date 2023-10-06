@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/Tree
+CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/git/template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/Tree/build
+CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/git/template/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles /home/zwh/myStudies/C++/Tree/build/Libraries/ZWH_App//CMakeFiles/progress.marks
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 0
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles /home/zwh/myStudies/C++/git/template/build/Libraries/ZWH_App//CMakeFiles/progress.marks
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/clean
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/preinstall
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/preinstall
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/rule:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/rule
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/rule
 .PHONY : Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ ZWH_App: Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/rule
 
 # fast build rule for target.
 ZWH_App/fast:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build
 .PHONY : ZWH_App/fast
 
 Stacks&Queues.o: Stacks&Queues.cpp.o
@@ -135,7 +135,7 @@ Stacks&Queues.o: Stacks&Queues.cpp.o
 
 # target to build an object file
 Stacks&Queues.cpp.o:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make "Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.o"
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make "Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.o"
 .PHONY : Stacks&Queues.cpp.o
 
 Stacks&Queues.i: Stacks&Queues.cpp.i
@@ -143,7 +143,7 @@ Stacks&Queues.i: Stacks&Queues.cpp.i
 
 # target to preprocess a source file
 Stacks&Queues.cpp.i:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make "Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.i"
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make "Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.i"
 .PHONY : Stacks&Queues.cpp.i
 
 Stacks&Queues.s: Stacks&Queues.cpp.s
@@ -151,7 +151,7 @@ Stacks&Queues.s: Stacks&Queues.cpp.s
 
 # target to generate assembly for a file
 Stacks&Queues.cpp.s:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make "Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.s"
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make "Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/Stacks&Queues.cpp.s"
 .PHONY : Stacks&Queues.cpp.s
 
 collection_zwh.o: collection_zwh.cpp.o
@@ -159,7 +159,7 @@ collection_zwh.o: collection_zwh.cpp.o
 
 # target to build an object file
 collection_zwh.cpp.o:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/collection_zwh.cpp.o
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/collection_zwh.cpp.o
 .PHONY : collection_zwh.cpp.o
 
 collection_zwh.i: collection_zwh.cpp.i
@@ -167,7 +167,7 @@ collection_zwh.i: collection_zwh.cpp.i
 
 # target to preprocess a source file
 collection_zwh.cpp.i:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/collection_zwh.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/collection_zwh.cpp.i
 .PHONY : collection_zwh.cpp.i
 
 collection_zwh.s: collection_zwh.cpp.s
@@ -175,7 +175,7 @@ collection_zwh.s: collection_zwh.cpp.s
 
 # target to generate assembly for a file
 collection_zwh.cpp.s:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/collection_zwh.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/collection_zwh.cpp.s
 .PHONY : collection_zwh.cpp.s
 
 string_zwh.o: string_zwh.cpp.o
@@ -183,7 +183,7 @@ string_zwh.o: string_zwh.cpp.o
 
 # target to build an object file
 string_zwh.cpp.o:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/string_zwh.cpp.o
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/string_zwh.cpp.o
 .PHONY : string_zwh.cpp.o
 
 string_zwh.i: string_zwh.cpp.i
@@ -191,7 +191,7 @@ string_zwh.i: string_zwh.cpp.i
 
 # target to preprocess a source file
 string_zwh.cpp.i:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/string_zwh.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/string_zwh.cpp.i
 .PHONY : string_zwh.cpp.i
 
 string_zwh.s: string_zwh.cpp.s
@@ -199,7 +199,7 @@ string_zwh.s: string_zwh.cpp.s
 
 # target to generate assembly for a file
 string_zwh.cpp.s:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/string_zwh.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/build.make Libraries/ZWH_App/CMakeFiles/ZWH_App.dir/string_zwh.cpp.s
 .PHONY : string_zwh.cpp.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

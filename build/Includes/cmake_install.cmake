@@ -1,4 +1,4 @@
-# Install script for directory: /home/zwh/myStudies/C++/Tree/Includes
+# Install script for directory: /home/zwh/myStudies/C++/git/template/Includes
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

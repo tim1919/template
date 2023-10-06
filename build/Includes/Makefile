@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/Tree
+CMAKE_SOURCE_DIR = /home/zwh/myStudies/C++/git/template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/Tree/build
+CMAKE_BINARY_DIR = /home/zwh/myStudies/C++/git/template/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles /home/zwh/myStudies/C++/Tree/build/Includes//CMakeFiles/progress.marks
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/Tree/build/CMakeFiles 0
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles /home/zwh/myStudies/C++/git/template/build/Includes//CMakeFiles/progress.marks
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zwh/myStudies/C++/git/template/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/clean
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/preinstall
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/preinstall
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Includes/CMakeFiles/Includes.dir/rule:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/CMakeFiles/Includes.dir/rule
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Includes/CMakeFiles/Includes.dir/rule
 .PHONY : Includes/CMakeFiles/Includes.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ Includes: Includes/CMakeFiles/Includes.dir/rule
 
 # fast build rule for target.
 Includes/fast:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/build
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/build
 .PHONY : Includes/fast
 
 include.o: include.cpp.o
@@ -135,7 +135,7 @@ include.o: include.cpp.o
 
 # target to build an object file
 include.cpp.o:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/include.cpp.o
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/include.cpp.o
 .PHONY : include.cpp.o
 
 include.i: include.cpp.i
@@ -143,7 +143,7 @@ include.i: include.cpp.i
 
 # target to preprocess a source file
 include.cpp.i:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/include.cpp.i
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/include.cpp.i
 .PHONY : include.cpp.i
 
 include.s: include.cpp.s
@@ -151,7 +151,7 @@ include.s: include.cpp.s
 
 # target to generate assembly for a file
 include.cpp.s:
-	cd /home/zwh/myStudies/C++/Tree/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/include.cpp.s
+	cd /home/zwh/myStudies/C++/git/template/build && $(MAKE) $(MAKESILENT) -f Includes/CMakeFiles/Includes.dir/build.make Includes/CMakeFiles/Includes.dir/include.cpp.s
 .PHONY : include.cpp.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zwh/myStudies/C++/Tree/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zwh/myStudies/C++/git/template/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -63,19 +63,19 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/zwh/myStudies/C++/Tree/Includes/."
+					"path" : "/home/zwh/myStudies/C++/git/template/Includes/."
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/."
+					"path" : "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/."
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class"
+					"path" : "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_Class/."
+					"path" : "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_Class/."
 				}
 			],
 			"language" : "CXX",

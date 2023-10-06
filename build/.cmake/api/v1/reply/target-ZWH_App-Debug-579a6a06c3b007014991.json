@@ -56,11 +56,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/."
+					"path" : "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/."
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/zwh/myStudies/C++/Tree/Libraries/ZWH_App/../ZWH_Class"
+					"path" : "/home/zwh/myStudies/C++/git/template/Libraries/ZWH_App/../ZWH_Class"
 				}
 			],
 			"language" : "CXX",
