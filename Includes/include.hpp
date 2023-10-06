@@ -6,20 +6,24 @@
 #include <sstream>
 
 
-//Apps
 
+//Classes
+#include <linearList.hpp>
+#include <myQueue.hpp>
+#include <myStack.hpp>
+#include <BinaryTree.hpp>
+
+//Apps
+#include <BankAccount.hpp>
 #include <collection_zwh.hpp>
 #include <Stacks&Queues.hpp>
 #include <string_zwh.hpp>
 
 
-//Classes
-#include <BankAccount.hpp>
-#include <BinaryTree.hpp>
-#include <linearList.hpp>
-#include <maze.hpp>
-#include <myQueue.hpp>
-#include <myStack.hpp>
+
+
+
+// #include <maze.hpp>
 
 
 
