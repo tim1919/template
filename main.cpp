@@ -12,7 +12,8 @@ int main(void)
    // myTree.test();
 
    myTree.create_scanf('X');
-   myTree.preOrder_loop(myTree.root(), PRINTF);
+   myTree.levelOrder(myTree.root(), PRINTF);
+   // myTree.preOrder_loop(myTree.root(), PRINTF);
 
    // Node<char>* ptr = myTree.root();
    // ptr = myTree.get(ptr, LEFT);
@@ -21,9 +22,21 @@ int main(void)
    // ptr = myTree.get(ptr, RIGHT);
    // myTree.func(PRINTF, ptr);
 
-   myTree.postOrder_loop(myTree.root(), PRINTF);
+   // myTree.postOrder_loop(myTree.root(), PRINTF);
 
-   std::cout << "height is " << myTree.height(myTree.root()) << std::endl;
-   std::cout << "height is " << myTree.height_2(myTree.root()) << std::endl;
+   // std::cout << "height is " << myTree.height(myTree.root()) << std::endl;
+   // std::cout << "height is " << myTree.height_2(myTree.root()) << std::endl;
+
+   // linkQueue<char> myQueue;
+   // myQueue.initQueue();
+   // myQueue.enQueue('X');
+   // myQueue.enQueue('Y');
+   // myQueue.enQueue('Z');
+   // myQueue.deQueue();
+   // myQueue.deQueue();
+   // std::cout << myQueue.isEmpty() << std::endl;
+   // myQueue.deQueue();
+   // std::cout << myQueue.isEmpty() << std::endl;
+
    return 0;
 }

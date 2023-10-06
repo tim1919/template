@@ -302,7 +302,7 @@ void LinkBinaryTree<ValueType>::preOrder_loop(Node<ValueType>* T, const int& fun
 }
 
 // template <typename ValueType>
-// void LinkBinaryTree<ValueType>::preOrder_loop_1(Node* T, const int& function)//前序遍历（顺序）（法一）
+// void LinkBinaryTree<ValueType>::preOrder_loop_1(Node* T, const int& function)//前序遍历（循环）（法一）
 // {
 //     Node* node[depth] = {0};
 //     int top = 0;
@@ -335,7 +335,7 @@ void LinkBinaryTree<ValueType>::preOrder_loop(Node<ValueType>* T, const int& fun
 // }
 
 // template <typename ValueType>
-// void LinkBinaryTree<ValueType>::preOrder_loop_2(Node* T, const int& function)//前序遍历（顺序）（法二）（容易理解）
+// void LinkBinaryTree<ValueType>::preOrder_loop_2(Node* T, const int& function)//前序遍历（循环）（法二）（容易理解）
 // {
 //     Node* node[depth] = {0};//注意：这个队列的第一个值一定得是0！（第一个值其实不存任何地址，置0是为了函数最后的if(0 == T)能够退出）
 //     int top = 0;
@@ -371,7 +371,7 @@ void LinkBinaryTree<ValueType>::preOrder_loop(Node<ValueType>* T, const int& fun
 // }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::inOrder_loop(Node<ValueType>* T, const int& function)//中序遍历（顺序）（法二）（容易理解）
+void LinkBinaryTree<ValueType>::inOrder_loop(Node<ValueType>* T, const int& function)//中序遍历（循环）（法二）（容易理解）
 {
     Stack<Node<ValueType>*> myStack;
     myStack.initStack_SQ();
@@ -398,7 +398,7 @@ void LinkBinaryTree<ValueType>::inOrder_loop(Node<ValueType>* T, const int& func
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::postOrder_loop(Node<ValueType>* T, const int& function)//后序遍历（顺序）（法二）（容易理解）
+void LinkBinaryTree<ValueType>::postOrder_loop(Node<ValueType>* T, const int& function)//后序遍历（循环）（法二）（容易理解）
 {
     Stack<Node<ValueType>*> myStack;
     Node<ValueType>* tmp = 0;
@@ -441,6 +441,28 @@ void LinkBinaryTree<ValueType>::postOrder_loop(Node<ValueType>* T, const int& fu
 
     myStack.destroyStack();
 
+}
+
+template <typename ValueType>
+void LinkBinaryTree<ValueType>::levelOrder(Node<ValueType>* T, const int& function)
+{
+    linkQueue<Node<ValueType>*> myQueue;
+    myQueue.initQueue();
+
+    myQueue.enQueue(T);
+
+    while (1)
+    {
+        if (myQueue.isEmpty())
+            break;
+    
+        T = myQueue.deQueue();
+        func(function, T);
+        if (T->lchild != 0)
+            myQueue.enQueue(T->lchild);
+        if (T->rchild != 0)
+            myQueue.enQueue(T->rchild);       
+    }
 }
 
 template <typename ValueType>

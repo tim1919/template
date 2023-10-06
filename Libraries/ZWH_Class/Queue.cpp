@@ -1,16 +1,18 @@
 template <typename myType>
-circularQueue<myType>::circularQueue(const int& n)
+bool circularQueue<myType>::init(const int& length)
 {
-    arr = new myType[n + 1];
+    arr = new myType[length + 1];
     front = 0;
     rear = 0;
-    max_size = n + 1;
+    max_size = length + 1;
+    return 1;
 }
 
 template <typename myType>
-circularQueue<myType>::~circularQueue(void)
+bool circularQueue<myType>::destroyQueue(void)
 {
     delete[] arr;
+    return 1;
 }
 
 template <typename myType>
@@ -32,7 +34,7 @@ bool circularQueue<myType>::isFull(void) const
 }
 
 template <typename myType>
-bool circularQueue<myType>::enqueue(const myType& elem)
+bool circularQueue<myType>::enQueue(const myType& elem)
 {
     if (isFull())
     {
@@ -48,7 +50,7 @@ bool circularQueue<myType>::enqueue(const myType& elem)
 }
 
 template <typename myType>
-myType circularQueue<myType>::dequeue(void)
+myType circularQueue<myType>::deQueue(void)
 {
     if (length() == 0)
     {
@@ -89,7 +91,7 @@ bool circularQueue<myType>::clear(void)
 {
     while (!isEmpty())
     {
-        dequeue();
+        deQueue();
     }
     return 1;
 }
@@ -110,7 +112,7 @@ bool circularQueue<myType>::remove(const int& n)
     {
         for (int tmp = 0; tmp < n; ++tmp)
         {
-            dequeue();
+            deQueue();
         }
     }
 }
@@ -121,35 +123,103 @@ bool circularQueue<myType>::remove(const int& n)
 template <typename myType>
 bool linkQueue<myType>::initQueue(void)
 {
-    front = new linkNode[1];
+    front = new linkNode[1];// 头结点
     rear = front;
     front->next = 0;
+    max_size = 0;
     return 1;
 }
 
 template <typename myType>
-bool linkQueue<myType>::enQueue(myType elem)
+bool linkQueue<myType>::destroyQueue(void)
 {
+    while (1)
+    {
+        if (front == rear)
+            break;
+        
+        deQueue();
+    }
+    delete[] front;
+    return 1;
+}
+
+template <typename myType>
+int linkQueue<myType>::length(void) const
+{
+    return max_size;
+}
+
+template <typename myType>
+bool linkQueue<myType>::isEmpty(void) const
+{
+    return front == rear;
+}
+
+template <typename myType>
+bool linkQueue<myType>::enQueue(const myType& elem)
+{
+    if (0 == front)
+    {
+        std::cout << "Queue hasn't been initialized!" << std::endl;
+        return 0;
+    }
+
     linkNode* tmp = new linkNode[1];
     rear->next = tmp;
     rear = tmp;
     rear->data = elem;
     rear->next = 0;
+    ++max_size;
     return 1;
 }
 
 template <typename myType>
 myType linkQueue<myType>::deQueue(void)
 {
-    if (front == rear)
+    myType tmp;
+    if (0 == front)
     {
-        myType tmp;
+        std::cout << "Queue hasn't been initialized!" << std::endl;
         return tmp;
+    }
+    else if (front == rear)
+    {
+        std::cout << "Queue is empty!" << std::endl;
+        return tmp;
+    }
+    
+    
+    linkNode* ptr = front->next;
+    tmp = ptr->data;
+    if (ptr != rear)
+    {
+        front->next = ptr->next;
     }
     else
     {
-        linkNode* tmp = front->next;
-        myType val = front->next->next;
-        front->next = front->next->next;
+        front->next = 0;
+        rear = front;
     }
+
+    delete[] ptr;
+    --max_size;
+    return tmp;
+}
+
+template <typename myType>
+myType& linkQueue<myType>::get_from_front(const int& n)
+{
+    if (n + 1 > max_size)
+    {
+        std::cout << "Index out of range!" << std::endl;
+        return front->data;
+    }
+
+    linkNode* ptr = front->next;
+    for (int i = 0; i < n; ++i)
+    {
+        ptr = ptr->next;
+    }
+    return ptr->data;
 }

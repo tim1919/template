@@ -48,12 +48,13 @@ public:
     void inOrder_recurse(Node<ValueType>* const& T, const int& function);//中序遍历
     void postOrder_recurse(Node<ValueType>* const& T, const int& function);//后续遍历
 
-    void preOrder_loop(Node<ValueType>* T, const int& function);//前序遍历（顺序）（法一）（还是用法一吧。。。）
-    // void preOrder_loop_1(Node* T, const int& function);//前序遍历（顺序）（法二）
-    // void preOrder_loop_2(Node* T, const int& function);//前序遍历（顺序）（法三）
-    void inOrder_loop(Node<ValueType>* T, const int& function);//中序遍历（顺序）（法一）
-    void postOrder_loop(Node<ValueType>* T, const int& function);//后序遍历（顺序）（法一）
+    void preOrder_loop(Node<ValueType>* T, const int& function);//前序遍历（循环）（法一）（还是用法一吧。。。）
+    // void preOrder_loop_1(Node* T, const int& function);//前序遍历（循环）（法二）
+    // void preOrder_loop_2(Node* T, const int& function);//前序遍历（循环）（法三）
+    void inOrder_loop(Node<ValueType>* T, const int& function);//中序遍历（循环）（法一）
+    void postOrder_loop(Node<ValueType>* T, const int& function);//后序遍历（循环）（法一）
 
+    void levelOrder(Node<ValueType>* T, const int& function);//层次遍历（循环）
     // void tmp(Node* T, const int& function);
     void test(void);
 private:
