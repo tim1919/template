@@ -2,8 +2,8 @@
 
 #include <vector>
 #include <iostream>
-#include <myStack.hpp>
-#include <myQueue.hpp>
+#include <Stack.hpp>
+#include <Queue.hpp>
 
 class maze
 {

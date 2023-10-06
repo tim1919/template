@@ -8,9 +8,9 @@
 
 
 //Classes
-#include <linearList.hpp>
-#include <myQueue.hpp>
-#include <myStack.hpp>
+#include <List.hpp>
+#include <Queue.hpp>
+#include <Stack.hpp>
 #include <BinaryTree.hpp>
 
 //Apps

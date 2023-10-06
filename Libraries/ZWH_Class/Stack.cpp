@@ -1,4 +1,4 @@
-//#include <myStack.hpp>
+//#include <Stack.hpp>
 
 
 template <typename myType>

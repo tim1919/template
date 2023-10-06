@@ -1,5 +1,5 @@
 #include <maze.hpp>
-//#include <myStack.hpp>
+//#include <Stack.hpp>
 
 
 maze::maze(void)

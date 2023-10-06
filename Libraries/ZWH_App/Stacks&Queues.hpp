@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include <myStack.hpp>
+#include <Stack.hpp>
 
 extern void convert_10_to_2(int val);
 
