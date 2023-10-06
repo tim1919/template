@@ -41,16 +41,16 @@ LinkBinaryTree<ValueType>::~LinkBinaryTree(void)
 // }
 
 template <typename ValueType>
-typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::create_recurse(int depth)//这是什么语法？？？能过编译？？？
+Node<ValueType>* LinkBinaryTree<ValueType>::create_recurse(int depth)//这是什么语法？？？能过编译？？？
 {
     if (0 == depth)
     {
-        Node* null = 0;
+        Node<ValueType>* null = 0;
         return null;
     }
     else
     {
-        Node* tmp = new Node[1];
+        Node<ValueType>* tmp = new Node[1];
         tmp->data = 6;
 
         --depth;
@@ -62,28 +62,31 @@ typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::create_recu
     }
 }
 
+
 template <typename ValueType>
-bool LinkBinaryTree<ValueType>::create_recurse_scanf(Node*& T)
+bool LinkBinaryTree<ValueType>::create_recurse_scanf(Node<ValueType>*& T, const ValueType& null)
 {
-    char ch;
-    scanf("%c", &ch);
-    if (' ' == ch)
+    ValueType val;
+    std::cin >> val;
+    // std::cout << "val: " << val << std::endl;
+    // scanf("%c", &ch);
+    if (null == val)
     {
         T = 0;
     }
     else
     {
-        T = new Node[1];
-        T->data = ch;
-        create_recurse_scanf(T->lchild);
-        create_recurse_scanf(T->rchild);
+        T = new Node<ValueType>[1];
+        T->data = val;
+        create_recurse_scanf(T->lchild, null);
+        create_recurse_scanf(T->rchild, null);
     }
     return 1;
 }
 
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::func(const int& func, Node* const& T)
+void LinkBinaryTree<ValueType>::func(const int& func, Node<ValueType>* const& T)
 {
     switch (func)
     {
@@ -105,35 +108,35 @@ bool LinkBinaryTree<ValueType>::create(const int& depth)
 {
     Root = create_recurse(depth);
 
-    this->depth = depth;//树的高度
+    // this->depth = depth;//树的高度
 
-    this->length = 1;
-    for (int i = 0; i < depth; ++i)
-    {
-        this->length *= 2;
-    }
-    this->length -= 1;//计算树的元素个数
+    // this->length = 1;
+    // for (int i = 0; i < depth; ++i)
+    // {
+    //     this->length *= 2;
+    // }
+    // this->length -= 1;//计算树的元素个数
 
-    std::cout << "depth = " << this->depth << std::endl;
+    // std::cout << "depth = " << this->depth << std::endl;
     return 1;
 }
 
 template <typename ValueType>
-bool LinkBinaryTree<ValueType>::create_scanf(void)
+bool LinkBinaryTree<ValueType>::create_scanf(const ValueType& null)
 {
-    create_recurse_scanf(Root);
+    create_recurse_scanf(Root, null);
     return 1;
 }
 
 
 template <typename ValueType>
-typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::root(void)//这是什么语法？？？能过编译？？？
+Node<ValueType>* LinkBinaryTree<ValueType>::root(void)//这是什么语法？？？能过编译？？？
 {
     return Root;
 }
 
 template <typename ValueType>
-typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::get(Node* const& T, const int& LorR)
+Node<ValueType>* LinkBinaryTree<ValueType>::get(Node<ValueType>* const& T, const int& LorR)
 {
     if (T == 0)
     {
@@ -163,25 +166,93 @@ typename LinkBinaryTree<ValueType>::Node* LinkBinaryTree<ValueType>::get(Node* c
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::preOrder_recurse(Node* const& T, const int& function)
+int LinkBinaryTree<ValueType>::height(Node<ValueType>* const& T)//
+{
+    if (T)
+    {
+        int lchild_height = height(T->lchild);
+        int rchild_height = height(T->rchild);
+
+        if (lchild_height > rchild_height)
+        {
+            return 1 + lchild_height;
+        }
+        else
+        {
+            return 1 + rchild_height;
+        }
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+template <typename ValueType>
+int LinkBinaryTree<ValueType>::height_2(Node<ValueType>* const& T)
+{
+    Node<ValueType>* ptr = T;
+    Stack<Node<ValueType>*> myStack;
+    Node<ValueType>* tmp = 0;
+    int height = 0;
+    myStack.initStack_SQ();
+
+    while (1)
+    {
+        if (myStack.length() > height)
+        {
+            height = myStack.length();
+        }
+
+        if (myStack.isEmpty() && 0 == ptr)
+            break;
+
+        if (ptr)
+        {
+            myStack.push_back(ptr);
+            ptr = ptr->lchild;//入栈+访左
+        }
+        else
+        {
+            ptr = myStack.getTop();
+            if (ptr->rchild != 0 && ptr->rchild != tmp)
+            {
+
+                ptr = ptr->rchild;
+            }
+            else if (ptr->rchild == 0 || ptr->rchild == tmp)//直接else也行
+            {
+                ptr = 0;
+                tmp = myStack.pop_back();
+            }
+        }
+    }
+
+    myStack.destroyStack();
+    return height;
+
+}
+
+template <typename ValueType>
+void LinkBinaryTree<ValueType>::preOrder_recurse(Node<ValueType>* const& T, const int& function)
 {
     if (T != 0)
     {
         func(function, T);
-        ++tmp;
-        test();
+        // ++tmp;
+        // test();
         preOrder_recurse(T->lchild, function);
-        ++tmp;
-        test();
+        // ++tmp;
+        // test();
         preOrder_recurse(T->rchild, function);
     }
-    --tmp;
+    // --tmp;
     test();
 }
 
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::inOrder_recurse(Node* const& T, const int& function)
+void LinkBinaryTree<ValueType>::inOrder_recurse(Node<ValueType>* const& T, const int& function)
 {
     if (T != 0)
     {
@@ -192,7 +263,7 @@ void LinkBinaryTree<ValueType>::inOrder_recurse(Node* const& T, const int& funct
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::postOrder_recurse(Node* const& T, const int& function)
+void LinkBinaryTree<ValueType>::postOrder_recurse(Node<ValueType>* const& T, const int& function)
 {
     if (T != 0)
     {
@@ -203,13 +274,14 @@ void LinkBinaryTree<ValueType>::postOrder_recurse(Node* const& T, const int& fun
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::preOrder_seq(Node* T, const int& function)
+void LinkBinaryTree<ValueType>::preOrder_loop(Node<ValueType>* T, const int& function)
 {
-    Stack<Node*> myStack;
+    Stack<Node<ValueType>*> myStack;
     myStack.initStack_SQ();
 
     while (1)
     {
+        // std::cout << "length of stack is: " << myStack.length() << std::endl;
         if (myStack.isEmpty() && 0 == T)
             break;
 
@@ -229,79 +301,79 @@ void LinkBinaryTree<ValueType>::preOrder_seq(Node* T, const int& function)
     myStack.destroyStack();
 }
 
-template <typename ValueType>
-void LinkBinaryTree<ValueType>::preOrder_seq_1(Node* T, const int& function)//前序遍历（顺序）（法一）
-{
-    Node* node[depth] = {0};
-    int top = 0;
-    while (1)
-    {
-        while (1)//实现功能+入栈
-        {
-            if (0 == T)
-                break;
+// template <typename ValueType>
+// void LinkBinaryTree<ValueType>::preOrder_loop_1(Node* T, const int& function)//前序遍历（顺序）（法一）
+// {
+//     Node* node[depth] = {0};
+//     int top = 0;
+//     while (1)
+//     {
+//         while (1)//实现功能+入栈
+//         {
+//             if (0 == T)
+//                 break;
 
-            func(function, T);//执行功能
+//             func(function, T);//执行功能
 
-            node[top] = T;
-            ++top;//入栈条件：二叉树指针非空
+//             node[top] = T;
+//             ++top;//入栈条件：二叉树指针非空
 
-            T = T->lchild;
-        }
+//             T = T->lchild;
+//         }
 
-        if (top > 0)//退栈+向右（注意：是平行向右！）
-        {
-            --top;//出栈条件：二叉树指针为空，且栈非空
+//         if (top > 0)//退栈+向右（注意：是平行向右！）
+//         {
+//             --top;//出栈条件：二叉树指针为空，且栈非空
 
-            T = node[top];
-            T = T->rchild;//指针平行向右
-        }
+//             T = node[top];
+//             T = T->rchild;//指针平行向右
+//         }
 
-        if (top <= 0 && 0 == T)//若栈和指针均空则结束
-            break;
-    }
-}
+//         if (top <= 0 && 0 == T)//若栈和指针均空则结束
+//             break;
+//     }
+// }
 
-template <typename ValueType>
-void LinkBinaryTree<ValueType>::preOrder_seq_2(Node* T, const int& function)//前序遍历（顺序）（法二）（容易理解）
-{
-    Node* node[depth] = {0};//注意：这个队列的第一个值一定得是0！（第一个值其实不存任何地址，置0是为了函数最后的if(0 == T)能够退出）
-    int top = 0;
-    if (0 == T)
-    {
-        std::cout << "The tree is empty!" << std::endl;
-    }
-    else
-    {
-        while (1)
-        {
-            func(function, T);
+// template <typename ValueType>
+// void LinkBinaryTree<ValueType>::preOrder_loop_2(Node* T, const int& function)//前序遍历（顺序）（法二）（容易理解）
+// {
+//     Node* node[depth] = {0};//注意：这个队列的第一个值一定得是0！（第一个值其实不存任何地址，置0是为了函数最后的if(0 == T)能够退出）
+//     int top = 0;
+//     if (0 == T)
+//     {
+//         std::cout << "The tree is empty!" << std::endl;
+//     }
+//     else
+//     {
+//         while (1)
+//         {
+//             func(function, T);
 
-            if (0 != T->rchild)//入栈条件：若有右孩子
-            {
-                ++top;
-                node[top] = T->rchild;//注意：和法一不同，这里入的是右孩子！！
-                //++top;
-            }
+//             if (0 != T->rchild)//入栈条件：若有右孩子
+//             {
+//                 ++top;
+//                 node[top] = T->rchild;//注意：和法一不同，这里入的是右孩子！！
+//                 //++top;
+//             }
 
-            T = T->lchild;
+//             T = T->lchild;
 
-            if (0 == T)//出栈条件：若无左孩子
-            {
-                T = node[top];//返回上一个有右孩子结点的右孩子
-                --top;
-            }
+//             if (0 == T)//出栈条件：若无左孩子
+//             {
+//                 T = node[top];//返回上一个有右孩子结点的右孩子
+//                 --top;
+//             }
             
-            if (0 == T)
-                break;
-        }
-    }
-}
+//             if (0 == T)
+//                 break;
+//         }
+//     }
+// }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::inOrder_seq(Node* T, const int& function)//中序遍历（顺序）（法二）（容易理解）
+void LinkBinaryTree<ValueType>::inOrder_loop(Node<ValueType>* T, const int& function)//中序遍历（顺序）（法二）（容易理解）
 {
-    Stack<Node*> myStack;
+    Stack<Node<ValueType>*> myStack;
     myStack.initStack_SQ();
 
     while (1)
@@ -326,14 +398,15 @@ void LinkBinaryTree<ValueType>::inOrder_seq(Node* T, const int& function)//中�
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::postOrder_seq(Node* T, const int& function)//后序遍历（顺序）（法二）（容易理解）
+void LinkBinaryTree<ValueType>::postOrder_loop(Node<ValueType>* T, const int& function)//后序遍历（顺序）（法二）（容易理解）
 {
-    Stack<Node*> myStack;
-    Node* tmp = 0;
+    Stack<Node<ValueType>*> myStack;
+    Node<ValueType>* tmp = 0;
     myStack.initStack_SQ();
 
     while (1)
     {
+        // std::cout << "stack length:" << myStack.length() << std::endl;
         if (myStack.isEmpty() && 0 == T)
             break;
 
@@ -353,7 +426,7 @@ void LinkBinaryTree<ValueType>::postOrder_seq(Node* T, const int& function)//后
                 // }
                 T = T->rchild;
             }
-            else if (T->rchild == 0 || T->rchild == tmp)
+            else if (T->rchild == 0 || T->rchild == tmp)//直接else也行
             {
                 // if (T->rchild == tmp)
                 // {
