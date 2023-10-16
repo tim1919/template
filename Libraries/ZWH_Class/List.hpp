@@ -12,8 +12,10 @@ public:
     bool isEmpty(void);
     int length(void);
     myType getElem(int i);
+    myType& getElem_link(int i);
     myType priorElem(int i);
     bool insertElem(int i, myType elem);
+    bool push_back_link(const myType& elem);
     bool deleteElem(int i);
 
 private:

@@ -57,6 +57,11 @@ public:
     void levelOrder(Node<ValueType>* T, const int& function);//层次遍历（循环）
     // void tmp(Node* T, const int& function);
     void test(void);
+
+    void getPreOrderSequence(const std::string& str);
+    void getInOrderSequence(const std::string& str);
+    void f(void);
+    void g(Node<ValueType>*& T, std::string str);
 private:
 
     Node<ValueType>* Root = 0;
@@ -65,6 +70,9 @@ private:
 
     int tmp = 0;
     int i_max = 0;
+
+    std::string preOrder_sequence;
+    std::string inOrder_sequence;
 
 
     Node<ValueType>* create_recurse(int depth);//递归

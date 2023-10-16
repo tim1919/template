@@ -117,6 +117,22 @@ myType List<myType>::getElem(int i)
 }
 
 template <typename myType>
+myType& List<myType>::getElem_link(int i)
+{
+    listNode* ptr = Header;
+    for (int j = 0; j <= i; ++j)
+    {
+        if (ptr->next == 0)
+        {
+            std::cout << "out of scope" << std::endl;
+            return Header->data;
+        }    
+        ptr = ptr->next;
+    }
+    return ptr->data;
+}
+
+template <typename myType>
 myType List<myType>::priorElem(int i)
 {
     if (i <= 0 || i >= LENGTH)
@@ -180,6 +196,27 @@ bool List<myType>::insertElem(int i, myType elem)
 
 
     LENGTH++;
+    return 1;
+}
+
+template <typename myType>
+bool List<myType>::push_back_link(const myType& elem)
+{
+    listNode* ptr = Header;
+    while (1)
+    {
+        if (0 == ptr->next)
+        {
+            break;
+        }
+        ptr = ptr->next;
+    }
+    listNode* tmp = (listNode*)malloc(sizeof(listNode));
+    tmp->data = elem;
+    tmp->next = 0;
+    ptr->next = tmp;
+    ++SIZE;
+    ++LENGTH;
     return 1;
 }
 
