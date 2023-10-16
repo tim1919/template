@@ -60,8 +60,8 @@ public:
 
     void getPreOrderSequence(const std::string& str);
     void getInOrderSequence(const std::string& str);
-    void f(void);
-    void g(Node<ValueType>*& T, std::string str);
+    void handle(void);
+    void recurse(Node<ValueType>*& T, std::string str);
 private:
 
     Node<ValueType>* Root = 0;

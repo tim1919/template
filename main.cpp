@@ -69,7 +69,9 @@ int main(void)
    myTree.getPreOrderSequence(tmp_preOrder);
    myTree.getInOrderSequence(tmp_inOrder);
    // myTree.root().data
-   myTree.f();
+   myTree.handle();
    std::cout << myTree.height(myTree.root()) << std::endl;
+
+   
    return 0;
 }

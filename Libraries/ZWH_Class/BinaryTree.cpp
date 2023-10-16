@@ -488,18 +488,18 @@ void LinkBinaryTree<ValueType>::getInOrderSequence(const std::string& str)
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::f(void)
+void LinkBinaryTree<ValueType>::handle(void)
 {
     Root = new Node<ValueType>[1];
     // Root->data = inOrder_sequence;
     Root->lchild = 0;
     Root->rchild = 0;
 
-    g(Root, inOrder_sequence);
+    recurse(Root, inOrder_sequence);
 }
 
 template <typename ValueType>
-void LinkBinaryTree<ValueType>::g(Node<ValueType>*& T, std::string str)
+void LinkBinaryTree<ValueType>::recurse(Node<ValueType>*& T, std::string str)
 {
 
     if (0 == str.size())
@@ -519,8 +519,8 @@ void LinkBinaryTree<ValueType>::g(Node<ValueType>*& T, std::string str)
 
         T = new Node<ValueType>[1];
         T->data = ch;
-        g(T->lchild, str_lch);
-        g(T->rchild, str_rch);
+        recurse(T->lchild, str_lch);
+        recurse(T->rchild, str_rch);
     }
     
 
