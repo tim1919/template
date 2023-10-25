@@ -12,6 +12,7 @@
 #include <Queue.hpp>
 #include <Stack.hpp>
 #include <BinaryTree.hpp>
+#include <Graph.hpp>
 
 //Apps
 #include <BankAccount.hpp>

@@ -38,8 +38,8 @@ public:
     ~LinkBinaryTree(void);
     bool create(const int& depth);
     bool create_scanf(const ValueType& null);
-    Node<ValueType>* root(void);//获取根结点
-    Node<ValueType>* get(Node<ValueType>* const& T, const int& LorR);
+    Node<ValueType>*& root(void);//获取根结点
+    Node<ValueType>*& get(Node<ValueType>* const& T, const int& LorR);
     int height(Node<ValueType>* const& T);//法一：递归求高度
     int height_2(Node<ValueType>* const& T);//法二：非递归后序遍历求高度
 

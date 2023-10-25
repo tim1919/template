@@ -50,7 +50,7 @@ Node<ValueType>* LinkBinaryTree<ValueType>::create_recurse(int depth)//这是什
     }
     else
     {
-        Node<ValueType>* tmp = new Node[1];
+        Node<ValueType>* tmp = new Node<ValueType>[1];
         tmp->data = 6;
 
         --depth;
@@ -130,13 +130,13 @@ bool LinkBinaryTree<ValueType>::create_scanf(const ValueType& null)
 
 
 template <typename ValueType>
-Node<ValueType>* LinkBinaryTree<ValueType>::root(void)//这是什么语法？？？能过编译？？？
+Node<ValueType>*& LinkBinaryTree<ValueType>::root(void)//这是什么语法？？？能过编译？？？
 {
     return Root;
 }
 
 template <typename ValueType>
-Node<ValueType>* LinkBinaryTree<ValueType>::get(Node<ValueType>* const& T, const int& LorR)
+Node<ValueType>*& LinkBinaryTree<ValueType>::get(Node<ValueType>* const& T, const int& LorR)
 {
     if (T == 0)
     {
