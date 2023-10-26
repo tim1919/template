@@ -1,11 +1,6 @@
 #include <include.hpp>
 #include <string>
 
-struct Polynomial
-{
-   long int a = 0;
-   long int n = 0;
-};
 
 int main(void)
 {

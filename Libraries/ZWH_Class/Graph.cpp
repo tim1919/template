@@ -7,7 +7,7 @@ bool Graph<T>::DFS_recurse(const int& function, const int& index)
     // std::cout << index << "func" << std::endl;
     for (int i = 0; i < size; ++i)
     {
-        if (0 != Edge[index][i] && __FLT_MAX__ != Edge[index][i] && 0 == DFS_isVisited[i])
+        if (0 != Edge[index][i] && __FLT_MAX__ != Edge[index][i] && 0 != DFS_isVisited[i])
         {
             // std::cout << index << "recurse" << std::endl;
             DFS_recurse(function, i);
@@ -226,7 +226,6 @@ template <typename T>
 bool Graph<T>::BFS(const int& function, const int& num)
 {
     BFS_isVisited = new bool[size];
-
     for (int i = 0; i < size; ++i)//初始化辅助数组
     {
         BFS_isVisited[i] = 0;
@@ -234,32 +233,26 @@ bool Graph<T>::BFS(const int& function, const int& num)
     linkQueue<int> myQueue;
     myQueue.initQueue();//队列初始化
 
-    for (int i = 0; i < size; ++i)
+    func(function, num);
+    BFS_isVisited[num] = 1;
+    myQueue.enQueue(num);
+
+    while (1)
     {
-        if (0 == BFS_isVisited[num])
+        if (myQueue.isEmpty())
         {
-            func(function, num);
-            BFS_isVisited[num] = 1;
-            myQueue.enQueue(num);
-            while (1)
+            break;
+        }
+
+        int index = myQueue.deQueue();
+
+        for (int j = 0; j < size; ++j)
+        {
+            if (0 != Edge[index][j] && __FLT_MAX__ != Edge[index][j] && 0 == BFS_isVisited[j])
             {
-                if (myQueue.isEmpty())
-                {
-                    break;
-                }
-
-                for (int j = 0; j < size; ++j)//队头下崽，崽入队，置标志位
-                {
-                    if (0 != Edge[myQueue.get_from_front(0)][j] && __FLT_MAX__ != Edge[myQueue.get_from_front(0)][j] && 0 == BFS_isVisited[j])
-                    {
-                        // std::cout << "enqueue:" << k << std::endl;
-                        func(function, j);
-                        BFS_isVisited[j] = 1;
-                        myQueue.enQueue(j);
-                    }
-                }
-
-                myQueue.deQueue();
+                func(function, j);
+                BFS_isVisited[j] = 1;
+                myQueue.enQueue(j);
             }
         }
     }
@@ -267,6 +260,41 @@ bool Graph<T>::BFS(const int& function, const int& num)
     myQueue.destroyQueue();
     delete[] BFS_isVisited;
     return 1;
+    /////////////////////////////
+
+    // for (int i = 0; i < size; ++i)
+    // {
+    //     if (0 == BFS_isVisited[num])
+    //     {
+    //         func(function, num);
+    //         BFS_isVisited[num] = 1;
+    //         myQueue.enQueue(num);
+    //         while (1)
+    //         {
+    //             if (myQueue.isEmpty())
+    //             {
+    //                 break;
+    //             }
+
+    //             for (int j = 0; j < size; ++j)//队头下崽，崽入队，置标志位
+    //             {
+    //                 if (0 != Edge[myQueue.get_from_front(0)][j] && __FLT_MAX__ != Edge[myQueue.get_from_front(0)][j] && 0 == BFS_isVisited[j])
+    //                 {
+    //                     // std::cout << "enqueue:" << k << std::endl;
+    //                     func(function, j);
+    //                     BFS_isVisited[j] = 1;
+    //                     myQueue.enQueue(j);
+    //                 }
+    //             }
+
+    //             myQueue.deQueue();
+    //         }
+    //     }
+    // }
+
+    // myQueue.destroyQueue();
+    // delete[] BFS_isVisited;
+    // return 1;
 }
 
 template <typename T>

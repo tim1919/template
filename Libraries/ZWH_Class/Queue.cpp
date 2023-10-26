@@ -208,6 +208,18 @@ myType linkQueue<myType>::deQueue(void)
 }
 
 template <typename myType>
+myType& linkQueue<myType>::get_front(void)
+{
+    return front->next->data;
+}
+
+template <typename myType>
+myType& linkQueue<myType>::get_rear(void)
+{
+    return rear->data;
+}
+
+template <typename myType>
 myType& linkQueue<myType>::get_from_front(const int& n)
 {
     if (n + 1 > max_size)

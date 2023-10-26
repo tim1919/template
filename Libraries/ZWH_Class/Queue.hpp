@@ -36,6 +36,8 @@ public:
     bool isEmpty(void) const;
     bool enQueue(const myType& elem);
     myType deQueue(void);
+    myType& get_front(void);
+    myType& get_rear(void);
     myType& get_from_front(const int& n);
 private:
     struct linkNode
