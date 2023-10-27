@@ -475,54 +475,54 @@ void LinkBinaryTree<ValueType>::test(void)
     std::cout << "i_max: " << i_max << std::endl;
 }
 
-template <typename ValueType>
-void LinkBinaryTree<ValueType>::getPreOrderSequence(const std::string& str)
-{
-    preOrder_sequence = str;
-}
+// template <typename ValueType>
+// void LinkBinaryTree<ValueType>::getPreOrderSequence(const std::string& str)
+// {
+//     preOrder_sequence = str;
+// }
 
-template <typename ValueType>
-void LinkBinaryTree<ValueType>::getInOrderSequence(const std::string& str)
-{
-    inOrder_sequence = str;
-}
+// template <typename ValueType>
+// void LinkBinaryTree<ValueType>::getInOrderSequence(const std::string& str)
+// {
+//     inOrder_sequence = str;
+// }
 
-template <typename ValueType>
-void LinkBinaryTree<ValueType>::handle(void)
-{
-    Root = new Node<ValueType>[1];
-    // Root->data = inOrder_sequence;
-    Root->lchild = 0;
-    Root->rchild = 0;
+// template <typename ValueType>
+// void LinkBinaryTree<ValueType>::handle(void)
+// {
+//     Root = new Node<ValueType>[1];
+//     // Root->data = inOrder_sequence;
+//     Root->lchild = 0;
+//     Root->rchild = 0;
 
-    recurse(Root, inOrder_sequence);
-}
+//     recurse(Root, inOrder_sequence);
+// }
 
-template <typename ValueType>
-void LinkBinaryTree<ValueType>::recurse(Node<ValueType>*& T, std::string str)
-{
+// template <typename ValueType>
+// void LinkBinaryTree<ValueType>::recurse(Node<ValueType>*& T, std::string str)
+// {
 
-    if (0 == str.size())
-    {
-        T = 0;
-    }
-    else
-    {
-        char ch = preOrder_sequence[0];
-        // std::cout << "ch = " << ch << std::endl;
-        preOrder_sequence.erase(0, 1);
-        int i = str.find(ch);
-        std::string str_lch = str.substr(0, i);
-        // std::cout << "str_lch = " << str_lch << std::endl;
-        std::string str_rch = str.substr(i + 1);
-        // std::cout << "str_rch = " << str_rch << std::endl;
+//     if (0 == str.size())
+//     {
+//         T = 0;
+//     }
+//     else
+//     {
+//         char ch = preOrder_sequence[0];
+//         // std::cout << "ch = " << ch << std::endl;
+//         preOrder_sequence.erase(0, 1);
+//         int i = str.find(ch);
+//         std::string str_lch = str.substr(0, i);
+//         // std::cout << "str_lch = " << str_lch << std::endl;
+//         std::string str_rch = str.substr(i + 1);
+//         // std::cout << "str_rch = " << str_rch << std::endl;
 
-        T = new Node<ValueType>[1];
-        T->data = ch;
-        recurse(T->lchild, str_lch);
-        recurse(T->rchild, str_rch);
-    }
+//         T = new Node<ValueType>[1];
+//         T->data = ch;
+//         recurse(T->lchild, str_lch);
+//         recurse(T->rchild, str_rch);
+//     }
     
 
 
-}
+// }

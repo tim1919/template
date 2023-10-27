@@ -27,6 +27,8 @@ private:
     float** Edge = 0;//邻接矩阵
     T* Vex = 0;//顶点数据
 
+    float** MST = 0;//最小生成树
+
     VNode<T>* AdjList;//邻接表
 
     bool* DFS_isVisited;
@@ -34,15 +36,20 @@ private:
 
     int size = 0;
 
-    bool DFS_recurse(const int& function, const int& index);
+    bool DFS_recurse(const int& function, const int& index, float** const& Edge);
 public:
     ~Graph(void);
     bool init_MGraph(const int& size);
     bool init_ALGraph(const int& size);
     bool create_MGraph(bool isYOUXIANG, bool isDAIQUAN);
+    float**& get_Edge(void);
+    float**& get_MST(void);
+    T*& get_Vex(void);
 
-    bool DFS(const int& function);
-    bool BFS(const int& function, const int& num);
+    bool DFS(const int& function, const int& num, float** const& Edge);
+    bool BFS(const int& function, const int& num, float** const& Edge);
+
+    bool Prim(const int& num);
 
     T* func(const int& function, const int& index);
 };

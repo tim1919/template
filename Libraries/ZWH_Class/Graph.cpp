@@ -1,16 +1,16 @@
 
 template <typename T>
-bool Graph<T>::DFS_recurse(const int& function, const int& index)
+bool Graph<T>::DFS_recurse(const int& function, const int& index, float** const& Edge)
 {
     func(function, index);
     DFS_isVisited[index] = 1;
     // std::cout << index << "func" << std::endl;
     for (int i = 0; i < size; ++i)
     {
-        if (0 != Edge[index][i] && __FLT_MAX__ != Edge[index][i] && 0 != DFS_isVisited[i])
+        if (0 != Edge[index][i] && __FLT_MAX__ != Edge[index][i] && 0 == DFS_isVisited[i])
         {
             // std::cout << index << "recurse" << std::endl;
-            DFS_recurse(function, i);
+            DFS_recurse(function, i, Edge);
         }
     }
 
@@ -201,7 +201,24 @@ bool Graph<T>::create_MGraph(bool isYOUXIANG, bool isDAIQUAN)
 }
 
 template <typename T>
-bool Graph<T>::DFS(const int& function)
+float**& Graph<T>::get_Edge(void)
+{
+    return Edge;
+}
+
+template <typename T>
+float**& Graph<T>::get_MST(void)
+{
+    return MST;
+}
+template <typename T>
+T*& Graph<T>::get_Vex(void)
+{
+    return Vex;
+}
+
+template <typename T>
+bool Graph<T>::DFS(const int& function, const int& num, float** const& Edge)
 {
     DFS_isVisited = new bool[size];
 
@@ -210,11 +227,12 @@ bool Graph<T>::DFS(const int& function)
         DFS_isVisited[i] = 0;
     }
 
+    DFS_recurse(function, num, Edge);
     for (int j = 0; j < size; ++j)//为了遍历所有连通分量
     {
         if (0 == DFS_isVisited[j])
         {
-            DFS_recurse(function, j);
+            DFS_recurse(function, j, Edge);
         }
     }
 
@@ -223,7 +241,7 @@ bool Graph<T>::DFS(const int& function)
 }
 
 template <typename T>
-bool Graph<T>::BFS(const int& function, const int& num)
+bool Graph<T>::BFS(const int& function, const int& num, float** const& Edge)
 {
     BFS_isVisited = new bool[size];
     for (int i = 0; i < size; ++i)//初始化辅助数组
@@ -248,6 +266,7 @@ bool Graph<T>::BFS(const int& function, const int& num)
 
         for (int j = 0; j < size; ++j)
         {
+            // std::cout << "dis from "<<index<<" to "<<j<<" is "<<Edge[index][j] <<std::endl;
             if (0 != Edge[index][j] && __FLT_MAX__ != Edge[index][j] && 0 == BFS_isVisited[j])
             {
                 func(function, j);
@@ -295,6 +314,68 @@ bool Graph<T>::BFS(const int& function, const int& num)
     // myQueue.destroyQueue();
     // delete[] BFS_isVisited;
     // return 1;
+}
+
+template <typename T>
+bool Graph<T>::Prim(const int& num)
+{
+    MST = new float*[size];
+    for (int i = 0; i < size; ++i)
+    {
+        MST[i] = new float[size];
+        for (int j = 0; j < size; ++j)
+        {
+            MST[i][j] = __FLT_MAX__;
+        }
+    }//最小生成树初始化
+
+    struct
+    {
+        int adjvex = 0;//U集中的顶点
+        float dis_min = __FLT_MAX__;
+    } closedge[size];
+
+    closedge[num].adjvex = num;
+    closedge[num].dis_min = 0;
+    for (int i = 0; i < size; ++i)
+    {
+        if (0 != closedge[i].dis_min)
+        {
+            closedge[i].adjvex = num;
+            closedge[i].dis_min = Edge[num][i];
+        }
+    }//辅助数组初始化
+
+    for (int n = 0; n < size - 1; ++n)
+    {
+        int tmp_index = 0;
+        float tmp_dis = __FLT_MAX__;
+        for (int i = 0; i < size; ++i)//在 U - V 集合里找到最短距离的最小值
+        {
+            if (0 != closedge[i].dis_min)//在 U - V 集合里找
+            {
+                if (tmp_dis > closedge[i].dis_min)
+                {
+                    tmp_index = i;
+                    tmp_dis = closedge[i].dis_min;
+                }
+            }
+        }
+
+        MST[closedge[tmp_index].adjvex][tmp_index] = closedge[tmp_index].dis_min;
+        closedge[tmp_index].dis_min = 0;//并入U集
+
+        for (int i = 0; i < size; ++i)//更新最短距离以及起始点
+        {
+            if (closedge[i].dis_min > Edge[tmp_index][i])
+            {
+                closedge[i].adjvex = tmp_index;
+                closedge[i].dis_min = Edge[tmp_index][i];
+            }
+        }
+    }
+
+    return 1;
 }
 
 template <typename T>
