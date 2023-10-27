@@ -55,7 +55,7 @@ bool Graph<T>::init_MGraph(const int& size)
 template <typename T>
 bool Graph<T>::init_ALGraph(const int& size)
 {
-    AdjList = new VNode<T>*[size];
+    AdjList = new VNode<T>[size];
     for (int i = 0; i < size; ++i)
     {
         AdjList[i].first = 0;
@@ -63,7 +63,7 @@ bool Graph<T>::init_ALGraph(const int& size)
         {
             AdjList[i].data &= ~(1 << j);
         }
-    }
+    }//初始化顶点表
 
     // DFS_isVisited = new bool[size];
 
@@ -76,10 +76,7 @@ bool Graph<T>::init_ALGraph(const int& size)
 template <typename T>
 bool Graph<T>::create_MGraph(bool isYOUXIANG, bool isDAIQUAN)
 {
-#define YOUXIANG 1
-#define WUXIANG 0
-#define DAIQUAN 1
-#define WUQUAN 0
+
 
     std::cout << "pls enter your data([index] [data]), press -1 to quit: " << std::endl;
 
@@ -199,6 +196,280 @@ bool Graph<T>::create_MGraph(bool isYOUXIANG, bool isDAIQUAN)
 
     return 1;
 }
+
+template <typename T>
+bool Graph<T>::create_ALGraph(bool isYOUXIANG, bool isDAIQUAN)
+{
+
+
+    std::cout << "pls enter your data([index] [data]), press -1 to quit: " << std::endl;
+
+    int index;
+
+    while (1)
+    {
+        std::cin >> index;
+
+        if (-1 == index)
+        {
+            break;
+        }
+
+        std::cin >> AdjList[index].data;
+    }
+
+
+    int index_1, index_2;
+    float weight;
+
+    if (0 == isYOUXIANG && 0 == isDAIQUAN)
+    {
+        std::cout << "pls enter edges(from [where] to [where]), press -1 to quit: " << std::endl;
+
+        while (1)
+        {
+            std::cin >> index_1;
+
+            if (-1 == index_1)
+            {
+                break;
+            }
+
+            std::cin >> index_2;
+
+            // Edge[index_1][index_2] = 1;
+            // Edge[index_2][index_1] = 1;
+            if (0 == AdjList[index_1].first)
+            {
+                AdjList[index_1].first = new ArcNode[1];
+                (AdjList[index_1].first)->adjvex = index_2;
+                (AdjList[index_1].first)->next = 0;
+                (AdjList[index_1].first)->weight = __FLT_MAX__;
+            }
+            else
+            {
+                ArcNode* ptr = AdjList[index_1].first;
+                while (1)
+                {
+                    if (0 == ptr->next)
+                    {
+                        break;
+                    }
+
+                    ptr = ptr->next;
+                }
+                ptr->next = new ArcNode[1];
+                ptr->next->adjvex = index_2;
+                ptr->next->next = 0;
+                ptr->next->weight = __FLT_MAX__;
+            }
+
+            if (0 == AdjList[index_2].first)
+            {
+                AdjList[index_2].first = new ArcNode[1];
+                (AdjList[index_2].first)->adjvex = index_1;
+                (AdjList[index_2].first)->next = 0;
+                (AdjList[index_2].first)->weight = __FLT_MAX__;
+            }
+            else
+            {
+                ArcNode* ptr = AdjList[index_2].first;
+                while (1)
+                {
+                    if (0 == ptr->next)
+                    {
+                        break;
+                    }
+
+                    ptr = ptr->next;
+                }
+                ptr->next = new ArcNode[1];
+                ptr->next->adjvex = index_1;
+                ptr->next->next = 0;
+                ptr->next->weight = __FLT_MAX__;
+            }
+        }
+    }
+    else if (0 == isYOUXIANG && 1 == isDAIQUAN)
+    {
+        // for (int i = 0; i < size; ++i)
+        // {
+        //     for (int j = 0; j < size; ++j)
+        //     {
+        //         Edge[i][j] = __FLT_MAX__;
+        //     }
+        // }
+
+        std::cout << "pls enter edges(from [where] to [where]) and [weight], press -1 to quit: " << std::endl;
+        
+        while (1)
+        {
+            std::cin >> index_1;
+
+            if (-1 == index_1)
+            {
+                break;
+            }
+
+            std::cin >> index_2;
+            std::cin >> weight;
+
+            // Edge[index_1][index_2] = weight;
+            // Edge[index_2][index_1] = weight;
+            if (0 == AdjList[index_1].first)
+            {
+                AdjList[index_1].first = new ArcNode[1];
+                (AdjList[index_1].first)->adjvex = index_2;
+                (AdjList[index_1].first)->next = 0;
+                (AdjList[index_1].first)->weight = weight;
+                // std::cout << "index_2 = " << (AdjList[index_1].first)->adjvex << std::endl;
+            }
+            else
+            {
+                ArcNode* ptr = AdjList[index_1].first;
+                while (1)
+                {
+                    if (0 == ptr->next)
+                    {
+                        break;
+                    }
+
+                    ptr = ptr->next;
+                }
+                ptr->next = new ArcNode[1];
+                ptr->next->adjvex = index_2;
+                ptr->next->next = 0;
+                ptr->next->weight = weight;
+                // std::cout << "ptr->next->adjvex is " << ptr->next->adjvex << std::endl;
+            }
+
+            if (0 == AdjList[index_2].first)
+            {
+                AdjList[index_2].first = new ArcNode[1];
+                (AdjList[index_2].first)->adjvex = index_1;
+                (AdjList[index_2].first)->next = 0;
+                (AdjList[index_2].first)->weight = weight;
+            }
+            else
+            {
+                ArcNode* ptr = AdjList[index_2].first;
+                while (1)
+                {
+                    if (0 == ptr->next)
+                    {
+                        break;
+                    }
+
+                    ptr = ptr->next;
+                }
+                ptr->next = new ArcNode[1];
+                ptr->next->adjvex = index_1;
+                ptr->next->next = 0;
+                ptr->next->weight = weight;
+            }
+        }
+
+    }
+    else if (1 == isYOUXIANG && 0 == isDAIQUAN)
+    {
+        std::cout << "pls enter edges(from [where] to [where]), press -1 to quit: " << std::endl;
+
+        while (1)
+        {
+            std::cin >> index_1;
+
+            if (-1 == index_1)
+            {
+                break;
+            }
+
+            std::cin >> index_2;
+
+            // Edge[index_1][index_2] = 1;
+            if (0 == AdjList[index_1].first)
+            {
+                AdjList[index_1].first = new ArcNode[1];
+                (AdjList[index_1].first)->adjvex = index_2;
+                (AdjList[index_1].first)->next = 0;
+                (AdjList[index_1].first)->weight = __FLT_MAX__;
+            }
+            else
+            {
+                ArcNode* ptr = AdjList[index_1].first;
+                while (1)
+                {
+                    if (0 == ptr->next)
+                    {
+                        break;
+                    }
+
+                    ptr = ptr->next;
+                }
+                ptr->next = new ArcNode[1];
+                ptr->next->adjvex = index_2;
+                ptr->next->next = 0;
+                ptr->next->weight = __FLT_MAX__;
+            }
+
+        }
+
+    }
+    else if (1 == isYOUXIANG && 1 == isDAIQUAN)
+    {
+        // for (int i = 0; i < size; ++i)
+        // {
+        //     for (int j = 0; j < size; ++j)
+        //     {
+        //         Edge[i][j] = __FLT_MAX__;
+        //     }
+        // }
+
+        std::cout << "pls enter edges(from [where] to [where]) and [weight], press -1 to quit: " << std::endl;
+        
+        while (1)
+        {
+            std::cin >> index_1;
+
+            if (-1 == index_1)
+            {
+                break;
+            }
+
+            std::cin >> index_2;
+            std::cin >> weight;
+
+            // Edge[index_1][index_2] = weight;
+            if (0 == AdjList[index_1].first)
+            {
+                AdjList[index_1].first = new ArcNode[1];
+                (AdjList[index_1].first)->adjvex = index_2;
+                (AdjList[index_1].first)->next = 0;
+                (AdjList[index_1].first)->weight = weight;
+            }
+            else
+            {
+                ArcNode* ptr = AdjList[index_1].first;
+                while (1)
+                {
+                    if (0 == ptr->next)
+                    {
+                        break;
+                    }
+
+                    ptr = ptr->next;
+                }
+                ptr->next = new ArcNode[1];
+                ptr->next->adjvex = index_2;
+                ptr->next->next = 0;
+                ptr->next->weight = weight;
+            }
+
+        }
+    }
+
+    return 1;
+}
+
 
 template <typename T>
 float**& Graph<T>::get_Edge(void)
@@ -376,6 +647,93 @@ bool Graph<T>::Prim(const int& num)
     }
 
     return 1;
+}
+
+template <typename T>
+bool Graph<T>::get_inDegree(void)
+{
+    inDegree = new int[size];
+    for (int i = 0; i < size; ++i)
+    {
+        inDegree[i] = 0;
+        // std::cout << "inDegree" << i << " is " << inDegree[i];
+    }
+    for (int i = 0; i < size; ++i)
+    {
+        ArcNode* ptr = AdjList[i].first;
+        while (1)
+        {
+            if (0 == ptr)
+            {
+                break;
+            }
+            ++inDegree[ptr->adjvex];
+            // std::cout << "ptr->adjvex is " <<ptr->adjvex << " inDegree[ptr->adjvex] is " << inDegree[ptr->adjvex] << std::endl;
+            ptr = ptr->next;
+            // std::cout << i << " indegree is" << inDegree[ptr->adjvex] << std::endl;;
+        }
+    }
+    return 1;
+}
+
+template <typename T>
+bool Graph<T>::topologicalSort(void)
+{
+    get_inDegree();
+    int* tmp_inDegree = new int[size];
+    for (int i = 0; i < size; ++i)
+    {
+        tmp_inDegree[i] = inDegree[i];
+    }
+
+    int count = 0;
+    Stack<int> myStack;
+    myStack.initStack_link();
+
+    for (int i = 0; i < size; ++i)
+    {
+        if (0 == tmp_inDegree[i])
+        {
+            myStack.push_back(i);
+        }
+    }
+    while (1)
+    {
+        if (myStack.isEmpty())
+        {
+            break;
+        }
+
+        int tmp_index = myStack.pop_back();
+        std::cout << tmp_index << ' ';
+        ++count;//出栈处理
+
+        ArcNode* ptr = AdjList[tmp_index].first;
+        while (1)
+        {
+            if (0 == ptr)
+            {
+                break;
+            }
+            --tmp_inDegree[ptr->adjvex];
+            if (0 == tmp_inDegree[ptr->adjvex])
+            {
+                myStack.push_back(ptr->adjvex);
+            }
+            ptr = ptr->next;
+        }
+    }
+
+    if (count == size)
+    {
+        std::cout << std::endl << "success!" << std::endl;
+        return 1;
+    }
+    else
+    {
+        std::cout << "error! graph is not connected!" <<std::endl;
+        return 0;
+    }
 }
 
 template <typename T>
