@@ -677,7 +677,7 @@ bool Graph<T>::get_inDegree(void)
 }
 
 template <typename T>
-bool Graph<T>::topologicalSort(void)
+bool Graph<T>::topologicalSort_AOV(void)
 {
     get_inDegree();
     int* tmp_inDegree = new int[size];
@@ -734,6 +734,161 @@ bool Graph<T>::topologicalSort(void)
         std::cout << "error! graph is not connected!" <<std::endl;
         return 0;
     }
+}
+
+template <typename T>
+bool Graph<T>::topologicalSort_AOE(Stack<int>& stack_topo_inverse)
+{
+    int count = 0;
+
+    get_inDegree();
+
+    int* tmp_inDegree = new int[size];
+    for (int i = 0; i < size; ++i)
+    {
+        tmp_inDegree[i] = inDegree[i];
+    }//复制过来，就不修改原来的值了
+
+    ve = new float[size];
+    for (int i = 0; i < size; ++i)
+    {
+        ve[i] = 0;
+    }//初始化ve
+
+    Stack<int> myStack;
+    myStack.initStack_link();
+
+    // Stack<int> topo_inverse;//这个栈用于逆拓扑排序
+    // topo_inverse.initStack_link();
+
+
+    for (int i = 0; i < size; ++i)
+    {
+        if (0 == tmp_inDegree[i])
+        {
+            myStack.push_back(i);
+        }
+    }//先将所有入度为 0 的顶点入栈，注意如果是求关键路径，则初始入度为 0 的顶点只有一个，即起点
+
+    while (1)
+    {
+        if (myStack.isEmpty())
+        {
+            break;
+        }
+        //出栈一个
+        int tmp_index = myStack.pop_back();
+        stack_topo_inverse.push_back(tmp_index);//用栈记录处理顺序，AOV拓扑没有这一步！
+        ++count;
+        ArcNode* ptr = AdjList[tmp_index].first;
+        while (1)
+        {
+            if (0 == ptr)
+            {
+                break;
+            }
+            --tmp_inDegree[ptr->adjvex];
+            if (0 == tmp_inDegree[ptr->adjvex])
+            {
+                myStack.push_back(ptr->adjvex);
+            }
+            if (ve[ptr->adjvex] < ve[tmp_index] + ptr->weight)
+            {
+                ve[ptr->adjvex] = ve[tmp_index] + ptr->weight;
+            }//更新弧头顶点的ve，AOV拓扑没有这一步！
+            ptr = ptr->next;
+        }
+    }
+
+
+    //测试用
+    for (int i = 0; i < size; ++i)
+    {
+        std::cout << "ve " << i << " is " << ve[i] << std::endl;
+    }
+
+    if (count == size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+template <typename T>
+bool Graph<T>::topologicalSort_AOE_inverse(Stack<int>& stack_topo_inverse)
+{
+    int end_point = stack_topo_inverse.pop_back();//此时栈顶的值就是终点的编号
+    vl = new float[size];
+    for (int i = 0; i < size; ++i)
+    {
+        vl[i] = ve[end_point];
+    }//vl初始化
+
+    while (1)
+    {
+        if (stack_topo_inverse.isEmpty())
+        {
+            break;
+        }
+
+        int tmp_index = stack_topo_inverse.pop_back();
+        ArcNode* ptr = AdjList[tmp_index].first;
+        while (1)
+        {
+            if (0 == ptr)
+            {
+                break;
+            }
+
+            std::cout << vl[tmp_index] << vl[ptr->adjvex] << ptr->weight << std::endl;
+
+            if (vl[tmp_index] > vl[ptr->adjvex] - ptr->weight)
+            {
+                vl[tmp_index] = vl[ptr->adjvex] - ptr->weight;
+            }
+            ptr = ptr->next;
+        }
+    }
+    return 1;
+}
+
+template <typename T>
+bool Graph<T>::criticalPath(void)
+{
+    Stack<int> myStack;
+    myStack.initStack_link();
+
+    if (!topologicalSort_AOE(myStack))//先拓扑排序，算一步ve
+    {
+        std::cout << "error! cannot finish topologicalSort!" << std::endl;
+        return 0;
+    }
+    topologicalSort_AOE_inverse(myStack);//后逆拓扑排序，算一步vl
+
+
+    for (int i = 0; i < size; ++i)
+    {
+        ArcNode* ptr = AdjList[i].first;
+        while (1)
+        {
+            if (0 == ptr)
+            {
+                break;
+            }
+
+            if (ve[i] == vl[ptr->adjvex] - ptr->weight)
+            {
+                std::cout << "critical path: <" << i << ", " << ptr->adjvex << '>' << std::endl;
+            }
+
+            ptr = ptr->next;
+        }
+    }
+
+    return 1;
 }
 
 template <typename T>

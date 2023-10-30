@@ -10,9 +10,10 @@ int main(void)
    // myGraph.Prim(2);
    // myGraph.BFS(PRINTF_GRAPH, 2, myGraph.get_MST());
    Graph<int> myGraph;
-   myGraph.init_ALGraph(3);
-   myGraph.create_ALGraph(YOUXIANG, WUQUAN);
+   myGraph.init_ALGraph(6);
+   myGraph.create_ALGraph(YOUXIANG, DAIQUAN);
    // std::cout << "??";
-   myGraph.topologicalSort();
+   // myGraph.topologicalSort_AOE();
+   myGraph.criticalPath();
    return 0;
 }

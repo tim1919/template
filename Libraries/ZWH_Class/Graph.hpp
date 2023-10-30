@@ -44,6 +44,10 @@ private:
     bool* BFS_isVisited;
 
     int* inDegree = 0;//各顶点入度（邻接表用）
+    float* ve = 0;//顶点的最早发生时间
+    float* vl = 0;//顶点的最迟发生时间
+    float* e = 0;//活动的最早发生时间
+    float* l = 0;//活动的最迟发生时间
 
     bool DFS_recurse(const int& function, const int& index, float** const& Edge);
 public:
@@ -62,7 +66,10 @@ public:
     bool Prim(const int& num);
 
     bool get_inDegree(void);//求各顶点入度（邻接表用）
-    bool topologicalSort(void);//拓扑排序，失败返回 0 ，说明图中存在回路
+    bool topologicalSort_AOV(void);//拓扑排序（AOV版本），失败返回 0 ，说明图中存在回路
+    bool topologicalSort_AOE(Stack<int>& stack_topo_inverse);//拓扑排序（AOE版本），失败返回 0 ，说明图中存在回路
+    bool topologicalSort_AOE_inverse(Stack<int>& stack_topo_inverse);//逆拓扑排序，必须用在上面函数之后
+    bool criticalPath(void);
 
 
 
