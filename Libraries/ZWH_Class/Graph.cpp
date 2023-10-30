@@ -600,11 +600,7 @@ bool Graph<T>::Prim(const int& num)
         }
     }//最小生成树初始化
 
-    struct
-    {
-        int adjvex = 0;//U集中的顶点
-        float dis_min = __FLT_MAX__;
-    } closedge[size];
+    Closedge closedge[size];
 
     closedge[num].adjvex = num;
     closedge[num].dis_min = 0;
@@ -892,6 +888,149 @@ bool Graph<T>::criticalPath(void)
 }
 
 template <typename T>
+bool Graph<T>::dijkstra(const int& start)
+{
+    dij = new Closedge[size];
+    int* dij_isVisited = new int[size];
+    //这里不同于prim算法，多了一个辅助数组，因为prim在运行的过程中，若closedge.dis为0则说明该顶点已被处理；而dijkstra里的closedge.dis需要存储该顶点到起点的距离
+    for (int i = 0; i < size; ++i)
+    {
+        dij[i].adjvex = start;
+        dij[i].dis_min = Edge[start][i];
+        dij_isVisited[i] = 0;
+    }
+    dij[start].dis_min = 0;
+    dij_isVisited[start] = 1;//辅助数组初始化
+
+    for (int i = 0; i < size - 1; ++i)//对剩下的 size - 1 个顶点进行操作
+    {
+        float tmp_dis = __FLT_MAX__;
+        int tmp_index = 0;
+        for (int j = 0; j < size; ++j)//找到未被访问过的顶点的距离的最小值
+        {
+            if (0 == dij_isVisited[j])
+            {
+                if (tmp_dis > dij[j].dis_min)
+                {
+                    tmp_index = j;
+                    tmp_dis = dij[j].dis_min;
+                }
+            }
+        }
+        dij_isVisited[tmp_index] = 1;
+        for (int k = 0; k < size; ++k)//更新其它顶点到起点的最短距离（dis_min）和前驱顶点编号（adjvex）
+        {
+            if (0 == dij_isVisited[k] && __FLT_MAX__ != Edge[tmp_index][k] && 0 != Edge[tmp_index][k])//如果未被访问过且有路径
+            {
+                if (dij[k].dis_min > dij[tmp_index].dis_min + Edge[tmp_index][k])
+                {
+                    dij[k].dis_min = dij[tmp_index].dis_min + Edge[tmp_index][k];
+                    dij[k].adjvex = tmp_index;
+                }
+            }
+        }
+    }
+
+    return 1;
+}
+
+template <typename T>
+bool Graph<T>::print_result_of_dijkstra(const int& start)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        if (start != i)
+        {
+            Stack<int> myStack;
+            myStack.initStack_link();
+            int tmp_index = i;
+            while (1)
+            {
+                if (start == tmp_index)
+                {
+                    break;
+                }
+                myStack.push_back(tmp_index);
+                tmp_index = dij[tmp_index].adjvex;
+            }
+            myStack.push_back(start);
+
+            std::cout << "dis from " << start << " to " << i << " is " << dij[i].dis_min << ", path is: ";
+            std::cout << myStack.pop_back();
+            while (1)//打印
+            {
+                if (myStack.isEmpty())
+                {
+                    break;
+                }
+                std::cout << " -> " << myStack.pop_back();
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    return 1;
+}
+
+
+template <typename T>
+bool Graph<T>::floyd(void)
+{
+    flo_dis = new float*[size];
+    flo_path = new int*[size];
+    for (int i = 0; i < size; ++i)
+    {
+        flo_dis[i] = new float[size];
+        flo_path[i] = new int[size];
+        for (int j = 0; j < size; ++j)
+        {
+            flo_dis[i][j] = Edge[i][j];
+            if (__FLT_MAX__ == Edge[i][j])
+            {
+                flo_path[i][j] = -1;//这里可不可以是 j 或者 i ？
+            }
+            else
+            {
+                flo_path[i][j] = i;//这里可不可以是 j ？
+            }
+        }
+    }//矩阵初始化
+
+    for (int n = 0; n < size; ++n)//迭代 size 次，每次都在两顶点间插入 n 进行比较
+    {
+        for (int i = 0; i < size; ++i)
+        {
+            for (int j = 0; j < size; ++j)
+            {
+                if (__FLT_MAX__ != Edge[i][n] && __FLT_MAX__ != Edge[n][j] && flo_dis[i][j] > Edge[i][n] + Edge[n][j])
+                {
+                    flo_dis[i][j] = Edge[i][n] + Edge[n][j];
+                    flo_path[i][j] = n;
+                }
+            }
+        }
+    }
+
+    return 1;
+}
+
+
+template <typename T>
+bool Graph<T>::print_result_of_floyd(const int& v1, const int& v2)
+{
+    if (-1 == flo_path[v1][v2])
+    {
+        std::cout << "error! there is no path from " << v1 << " to " << v2 << " !" <<std::endl;
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+}
+
+
+template <typename T>
 T* Graph<T>::func(const int& function, const int& index)
 {
 #define PRINTF_GRAPH 0
@@ -918,3 +1057,5 @@ T* Graph<T>::func(const int& function, const int& index)
     }
     return ptr;
 }
+
+
