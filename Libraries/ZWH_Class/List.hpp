@@ -2,6 +2,13 @@
 #include <stdlib.h>
 
 template <typename myType>
+struct listNode
+{
+    myType data;
+    listNode* next;
+};
+
+template <typename myType>
 class List
 {
 public:
@@ -17,17 +24,14 @@ public:
     bool insertElem(int i, myType elem);
     bool push_back_link(const myType& elem);
     bool deleteElem(int i);
+    listNode<myType>* getPtr_link(const int& i);
 
 private:
     int SIZE = 0; // size of the list
     int LENGTH = 0;
     myType* list; // pointer to the list
 
-    struct listNode
-    {
-        myType data;
-        listNode* next;
-    } *Header;
+   listNode<myType>* Header; 
 
     enum 
     {

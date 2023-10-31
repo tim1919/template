@@ -14,7 +14,7 @@ bool List<myType>::initList_SQ(void)
 template <typename myType>
 bool List<myType>::initList_link(void)
 {
-    Header = (listNode*)malloc(sizeof(listNode));//创建一个表头
+    Header = (listNode<myType>*)malloc(sizeof(listNode<myType>));//创建一个表头
     
     if (Header == 0)
         return 0;
@@ -64,7 +64,7 @@ bool List<myType>::clearList(void)
         }
         else
         {
-            listNode* p = Header;
+            listNode<myType>* p = Header;
             for (int i = 0; i < LENGTH; ++i)
             {
                 p = p->next;
@@ -106,7 +106,7 @@ myType List<myType>::getElem(int i)
         }
         else
         {
-            listNode* p = Header->next;
+            listNode<myType>* p = Header->next;
             for (int j = 0; j < i; ++j)
             {
                 p = p->next;
@@ -119,7 +119,7 @@ myType List<myType>::getElem(int i)
 template <typename myType>
 myType& List<myType>::getElem_link(int i)
 {
-    listNode* ptr = Header;
+    listNode<myType>* ptr = Header;
     for (int j = 0; j <= i; ++j)
     {
         if (ptr->next == 0)
@@ -169,16 +169,17 @@ bool List<myType>::insertElem(int i, myType elem)
         }
 
         list[i] = elem;
+        ++LENGTH;
 
     }
     else if (Status == link)
     {
-        listNode* p = Header;
+        listNode<myType>* p = Header;
         for (int j = 0; j < i; ++j)
         {
             p = p->next;
         }
-        listNode* tmp = (listNode*)malloc(sizeof(listNode));
+        listNode<myType>* tmp = (listNode<myType>*)malloc(sizeof(listNode<myType>));
         tmp->data = elem;
         if (i == LENGTH - 1)
         {
@@ -191,18 +192,14 @@ bool List<myType>::insertElem(int i, myType elem)
         p->next = tmp;
         ++SIZE;
         ++LENGTH;
-        return 1;
     }
-
-
-    LENGTH++;
     return 1;
 }
 
 template <typename myType>
 bool List<myType>::push_back_link(const myType& elem)
 {
-    listNode* ptr = Header;
+    listNode<myType>* ptr = Header;
     while (1)
     {
         if (0 == ptr->next)
@@ -211,7 +208,7 @@ bool List<myType>::push_back_link(const myType& elem)
         }
         ptr = ptr->next;
     }
-    listNode* tmp = (listNode*)malloc(sizeof(listNode));
+    listNode<myType>* tmp = (listNode<myType>*)malloc(sizeof(listNode<myType>));
     tmp->data = elem;
     tmp->next = 0;
     ptr->next = tmp;
@@ -240,12 +237,12 @@ bool List<myType>::deleteElem(int i)
     }
     else if (Status == link)
     {
-        listNode* p = Header;
+        listNode<myType>* p = Header;
         for (int k = 0; k < i; ++k)
         {
             p = p->next;
         }
-        listNode* tmp = p->next;
+        listNode<myType>* tmp = p->next;
         p->next = p->next->next;
         free(tmp);
         tmp = 0;
@@ -255,3 +252,26 @@ bool List<myType>::deleteElem(int i)
     }
 }
 
+template <typename myType>
+listNode<myType>* List<myType>::getPtr_link(const int& i)
+{
+    listNode<myType>* ptr = Header->next;
+    int count = 0;
+    while (1)
+    {
+        if (0 == ptr)
+        {
+            std::cout << "error! out of scope! (from List.cpp/getPtr_link)" << std::endl;
+            return 0;
+        }
+
+        if (count == i)
+        {
+            break;
+        }
+
+        ptr = ptr->next;
+        ++count;
+    }
+    return ptr;
+}

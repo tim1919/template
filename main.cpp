@@ -59,7 +59,14 @@ int main(void)
    // myGraph.dijkstra(0);
    
    // myGraph.print_result_of_dijkstra(0);
-   // myGraph.floyd();
-   // myGraph.print_result_of_floyd(0, 1);
+   myGraph.floyd();
+   myGraph.print_result_of_floyd(0, 2);
+
+/****************************************Graph*****************************************/
+   // List<int> myList;
+   // myList.initList_link();
+   // myList.insertElem(0, 9);
+   // myList.insertElem(1, 5);
+   // std::cout << myList.getElem_link(0) << myList.getElem_link(1) << std::endl;
    return 0;
 }

@@ -1025,8 +1025,64 @@ bool Graph<T>::print_result_of_floyd(const int& v1, const int& v2)
     }
     else
     {
-        return 1;
+        List<int> myList;
+        myList.initList_link();
+
+        Stack<listNode<int>*> myStack;
+        myStack.initStack_link();
+
+        myList.push_back_link(v1);
+        myList.push_back_link(v2);
+
+        listNode<int>* ptr = myList.getPtr_link(0);
+
+
+        myStack.push_back(myList.getPtr_link(1));
+        while (1)
+        {
+            if (myStack.isEmpty())
+            {
+                break;
+            }
+
+            if (-1 != flo_path[ptr->data][ptr->next->data] && ptr->data != flo_path[ptr->data][ptr->next->data] && ptr->next->data != flo_path[ptr->data][ptr->next->data])
+            {
+                listNode<int>* tmp_ptr = new listNode<int>[1];
+                tmp_ptr->data = flo_path[ptr->data][ptr->next->data];
+                tmp_ptr->next = ptr->next;
+                ptr->next = tmp_ptr;//新存一个顶点
+
+                myStack.push_back(tmp_ptr);//入栈
+            }
+            else
+            {
+                ptr = myStack.pop_back();
+            }
+        }//得出最短路径，存链表里
+
+        float dis_min = 0;
+        ptr = myList.getPtr_link(0);
+        std::cout << "path is: ";
+        std::cout << ptr->data;
+        dis_min += Edge[ptr->data][ptr->next->data];
+        ptr = ptr->next;
+        while (1)
+        {
+            if (0 == ptr)
+            {
+                break;
+            }
+            std::cout << " -> " << ptr->data;
+            if (0 != ptr->next)
+            {
+                dis_min += Edge[ptr->data][ptr->next->data];
+            }
+            ptr = ptr->next;
+        }
+        std::cout << " , dis is " << dis_min << std::endl;
     }
+
+    return 1;
 }
 
 
