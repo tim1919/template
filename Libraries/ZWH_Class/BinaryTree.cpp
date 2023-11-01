@@ -128,6 +128,47 @@ bool LinkBinaryTree<ValueType>::create_scanf(const ValueType& null)
     return 1;
 }
 
+template <typename ValueType>
+bool LinkBinaryTree<ValueType>::create_child(Node<ValueType>* const& T, const int& LorR, const ValueType& val)
+{
+    switch (LorR)
+    {
+        case LEFT:
+        {
+            if (0 != T->lchild)
+            {
+                std::cout << "error! already have lchild! (from BinaryTree.cpp/create_child)" << std::endl;
+                return 0;
+            }
+            T->lchild = new Node<ValueType>[1];
+            T->lchild->lchild = 0;
+            T->lchild->rchild = 0;
+            T->lchild->data = val;
+            break;
+        }
+        case RIGHT:
+        {
+            if (0 != T->rchild)
+            {
+                std::cout << "error! already have rchild! (from BinaryTree.cpp/create_child)" << std::endl;
+                return 0;
+            }
+            T->rchild = new Node<ValueType>[1];
+            T->rchild->lchild = 0;
+            T->rchild->rchild = 0;
+            T->lchild->data = val;
+            break;
+        }
+        default:
+        {
+            std::cout << "error! invalid param! (from BinaryTree.cpp/create_child)" << std::endl;
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
 
 template <typename ValueType>
 Node<ValueType>*& LinkBinaryTree<ValueType>::root(void)//这是什么语法？？？能过编译？？？
@@ -136,7 +177,7 @@ Node<ValueType>*& LinkBinaryTree<ValueType>::root(void)//这是什么语法？�
 }
 
 template <typename ValueType>
-Node<ValueType>*& LinkBinaryTree<ValueType>::get(Node<ValueType>* const& T, const int& LorR)
+Node<ValueType>*& LinkBinaryTree<ValueType>::get_child(Node<ValueType>* const& T, const int& LorR)
 {
     if (T == 0)
     {
@@ -450,6 +491,7 @@ void LinkBinaryTree<ValueType>::levelOrder(Node<ValueType>* T, const int& functi
     myQueue.initQueue();
 
     myQueue.enQueue(T);
+    func(function, T);
 
     while (1)
     {
@@ -457,11 +499,18 @@ void LinkBinaryTree<ValueType>::levelOrder(Node<ValueType>* T, const int& functi
             break;
     
         T = myQueue.deQueue();
-        func(function, T);
+        // func(function, T);
         if (T->lchild != 0)
+        {
             myQueue.enQueue(T->lchild);
+            func(function, T->lchild);
+        }
+
         if (T->rchild != 0)
-            myQueue.enQueue(T->rchild);       
+        {
+            myQueue.enQueue(T->rchild);
+            func(function, T->rchild);
+        }   
     }
 }
 

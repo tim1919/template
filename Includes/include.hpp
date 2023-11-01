@@ -13,6 +13,7 @@
 #include <Stack.hpp>
 #include <BinaryTree.hpp>
 #include <Graph.hpp>
+#include <Search.hpp>
 
 //Apps
 #include <BankAccount.hpp>

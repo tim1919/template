@@ -35,11 +35,16 @@ public:
 
 
     void func(const int& func, Node<ValueType>* const& T);
+
     ~LinkBinaryTree(void);
+
     bool create(const int& depth);
-    bool create_scanf(const ValueType& null);
+    bool create_scanf(const ValueType& null);//输入先序序列（带空指针）以创建一颗二叉树
+    bool create_child(Node<ValueType>* const& T, const int& LorR, const ValueType& val);//创建一个左/右孩子
+
     Node<ValueType>*& root(void);//获取根结点
-    Node<ValueType>*& get(Node<ValueType>* const& T, const int& LorR);
+    Node<ValueType>*& get_child(Node<ValueType>* const& T, const int& LorR);
+
     int height(Node<ValueType>* const& T);//法一：递归求高度
     int height_2(Node<ValueType>* const& T);//法二：非递归后序遍历求高度
 
@@ -75,8 +80,7 @@ private:
     // std::string inOrder_sequence;
 
 
-    Node<ValueType>* create_recurse(int depth);//递归
-    
+    Node<ValueType>* create_recurse(int depth);//递归   
     bool create_recurse_scanf(Node<ValueType>*& T, const ValueType& null);
 
 };

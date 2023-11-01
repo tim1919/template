@@ -1079,7 +1079,7 @@ bool Graph<T>::print_result_of_floyd(const int& v1, const int& v2)
             }
             ptr = ptr->next;
         }
-        std::cout << " , dis is " << dis_min << std::endl;
+        std::cout << " , dis is " << dis_min << std::endl;//计算距离并输出
     }
 
     return 1;

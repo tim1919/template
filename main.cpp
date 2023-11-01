@@ -50,17 +50,17 @@ int main(void)
    // myGraph.create_MGraph(WUXIANG, DAIQUAN);
    // myGraph.Prim(2);
    // myGraph.BFS(PRINTF_GRAPH, 2, myGraph.get_MST());
-   Graph<int> myGraph;
-   myGraph.init_MGraph(6);
-   myGraph.create_MGraph(YOUXIANG, DAIQUAN);
+   // Graph<int> myGraph;
+   // myGraph.init_MGraph(6);
+   // myGraph.create_MGraph(YOUXIANG, DAIQUAN);
    // std::cout << "??";
    // myGraph.topologicalSort_AOE();
    // myGraph.criticalPath();
    // myGraph.dijkstra(0);
-   
+ 
    // myGraph.print_result_of_dijkstra(0);
-   myGraph.floyd();
-   myGraph.print_result_of_floyd(0, 2);
+   // myGraph.floyd();
+   // myGraph.print_result_of_floyd(0, 2);
 
 /****************************************Graph*****************************************/
    // List<int> myList;
@@ -68,5 +68,11 @@ int main(void)
    // myList.insertElem(0, 9);
    // myList.insertElem(1, 5);
    // std::cout << myList.getElem_link(0) << myList.getElem_link(1) << std::endl;
+
+/****************************************Tree*****************************************/
+   LinkBinaryTree<int> myTree;
+   myTree.create_scanf(-1);
+   // myTree.preOrder_loop(myTree.root(), PRINTF);
+   myTree.levelOrder(myTree.root(), PRINTF);
    return 0;
 }
