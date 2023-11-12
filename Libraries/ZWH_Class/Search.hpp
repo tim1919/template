@@ -39,10 +39,12 @@ template <typename T>
 class BST//二叉排序树
 {
 private:
+    // bool Delete_Recurse(Node<T>*& root, const T& key);
 public:
-    Node<T>* Search_BST(Node<T>* const& root, const T& key);
-    bool Insert_BST(Node<T>* root, const T& key);
+    Node<T>* Search_BST(Node<T>* const& root, const T& key);//这个还是得改成返回指针
+    Node<T>* Insert_BST(Node<T>* root, const T& key);
     bool Create_BST_Scanf(Node<T>* root, const T& null);
+    bool Delete_BST(Node<T>*& root, const T& key);//递归实现删除，记不太住
 };
 
 

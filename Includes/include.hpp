@@ -14,12 +14,14 @@
 #include <BinaryTree.hpp>
 #include <Graph.hpp>
 #include <Search.hpp>
+#include <Sort.hpp>
 
 //Apps
 #include <BankAccount.hpp>
 #include <collection_zwh.hpp>
 #include <Stacks&Queues.hpp>
 #include <string_zwh.hpp>
+#include <GetSimilarity.hpp>
 
 
 

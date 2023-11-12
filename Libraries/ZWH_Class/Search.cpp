@@ -141,24 +141,35 @@ int StaticSearchTable<T>::Search_Index(const T& key)
 template <typename T>
 Node<T>* BST<T>::Search_BST(Node<T>* const& root, const T& key)
 {
+    if (0 == root)
+    {
+        std::cout << "error! tree is empty! (from Search.cpp/Search_BST)" << std::endl;
+        return 0;
+    }
+
     Node<T>* ptr = root;
     while (1)
     {
-        if (0 == ptr)
-        {
-            break;
-        }
-
         if (key == ptr->data)
         {
             return ptr;
         }
         else if (key > ptr->data)
         {
+            if (0 == ptr->rchild)
+            {
+                std::cout << "no such key! (from Search.cpp/Search_BST)" << std::endl;
+                return 0;
+            }
             ptr = ptr->rchild;
         }
         else
         {
+            if (0 == ptr->lchild)
+            {
+                std::cout << "no such key! (from Search.cpp/Search_BST)" << std::endl;
+                return 0;
+            }
             ptr = ptr->lchild;
         }
     }
@@ -167,7 +178,7 @@ Node<T>* BST<T>::Search_BST(Node<T>* const& root, const T& key)
 }
 
 template <typename T>
-bool BST<T>::Insert_BST(Node<T>* root, const T& key)
+Node<T>* BST<T>::Insert_BST(Node<T>* root, const T& key)
 {
     if (0 == root)
     {
@@ -176,7 +187,7 @@ bool BST<T>::Insert_BST(Node<T>* root, const T& key)
         root->lchild = 0;
         root->rchild = 0;
         std::cout << "tree is empty! new val added! (from Search.cpp/InsertBST)" << std::endl;
-        return 1;
+        return root;
     }
     
     Node<T>* ptr = root;
@@ -196,7 +207,7 @@ bool BST<T>::Insert_BST(Node<T>* root, const T& key)
                 ptr->rchild->lchild = 0;
                 ptr->rchild->rchild = 0;
                 ptr->rchild->data = key;
-                return 1;
+                return ptr;
             }
             ptr = ptr->rchild;
         }
@@ -208,7 +219,7 @@ bool BST<T>::Insert_BST(Node<T>* root, const T& key)
                 ptr->lchild->lchild = 0;
                 ptr->lchild->rchild = 0;
                 ptr->lchild->data = key;
-                return 1;
+                return ptr;
             }
             ptr = ptr->lchild;
         }
@@ -234,4 +245,80 @@ bool BST<T>::Create_BST_Scanf(Node<T>* root, const T& null)
         std::cin >> tmp_key;
     }
     return 1;
+}
+
+
+template <typename T>
+bool BST<T>::Delete_BST(Node<T>*& root, const T& key)
+{
+    if (0 == root)
+    {
+        std::cout << "error! no such key! (from Search.cpp/Delete_BST)" << std::endl;
+        return 0;
+    }
+    else
+    {
+        if (key == root->data)
+        {
+            if (0 == root->lchild && 0 == root->rchild)//如果该结点没有孩子
+            {
+                delete[] root;
+                root = 0;
+                return 1;
+            }
+            else if (0 == root->lchild && 0 != root->rchild)//若其只有右孩子
+            {
+                Node<T>* ptr = root->rchild;
+                delete[] root;
+                root = ptr;
+                return 1;
+            }
+            else if (0 != root->lchild && 0 == root->rchild)
+            {
+                Node<T>* ptr = root->lchild;
+                delete[] root;
+                root = ptr;
+                return 1;
+            }
+            else//若既有左孩子又有右孩子（这里让其左子树中的最大结点将其顶替）
+            {
+                if (0 == root->lchild->rchild)
+                {
+                    Node<T>* ptr = root->lchild;
+                    ptr->rchild = root->rchild;
+                    delete[] root;
+                    root = ptr;
+                }
+                else
+                {
+                    Node<T>* ptr_up = root->lchild;
+                    Node<T>* ptr_down = root->lchild->rchild;
+                    while (1)
+                    {
+                        if (0 == ptr_down->rchild)
+                        {
+                            break;
+                        }
+                        ptr_up = ptr_down;
+                        ptr_down = ptr_down->rchild;
+                    }
+                    ptr_up->rchild = ptr_down->lchild;
+                    ptr_down->lchild = root->lchild;
+                    ptr_down->rchild = root->rchild;
+                    delete[] root;
+                    root = ptr_down;
+                }
+                return 1; 
+                
+            }
+        }
+        else if (key > root->data)
+        {
+            return Delete_BST(root->rchild, key);
+        }
+        else
+        {
+            return Delete_BST(root->lchild, key);
+        }
+    }
 }
