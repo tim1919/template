@@ -15,6 +15,7 @@
 #include <Graph.hpp>
 #include <Search.hpp>
 #include <Sort.hpp>
+#include <String.hpp>
 
 //Apps
 #include <BankAccount.hpp>

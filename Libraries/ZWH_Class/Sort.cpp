@@ -226,11 +226,190 @@ bool Sort<T>::HeapSort(T* const& arr, const int& elem_size, bool (* compare)(T a
         arr[0] = arr[1];
         arr[1] = arr[i];
         arr[i] = arr[0];
+        // std::cout << arr[0].name << ' ' << arr[1].name << arr[2].name << arr[3].name << "     ";
+
         Heap_Adjust(arr, 1, i - 1, compare);
+        // std::cout << arr[0].name << ' ' << arr[1].name << arr[2].name << arr[3].name << std::endl;
+
     }//第二步：循环将堆顶元素塞到堆后面（即有序区），此时原大（小）顶堆只有对顶有问题，然后再次调整
 
     return 1;
 }
+
+
+
+template <typename T>
+bool Sort<T>::MergeSort(T*& arr, const int& elem_size, bool (* compare)(T a, T b))
+{
+    T* tmp_arr = new T[elem_size + 1];//共轭数组
+    int sub_length = 1;//子序列的长度
+    int low, high, mid;//注意这里的 mid 指向两个要归并的序列中第一个序列的尾，不一定是中间（考虑整个序列最后面的特殊情况）
+    while (1)//这个 while 用来增加子序列长度
+    {
+        if (sub_length >= elem_size)
+        {
+            break;
+        }
+        
+        low = 1;
+        mid = sub_length;
+        high = (2 * sub_length > elem_size) ? elem_size : 2 * sub_length;
+        while (1)//这个 while 用来往后走
+        {
+            int i = low, j = mid + 1;
+            int sub_ptr = low;//这个数组下标用来复制到数组
+            while (1)//这个 while 用来归并
+            {
+                if (i > mid || j > high)
+                {
+                    if (i > mid)//将剩下的元素加入
+                    {
+                        while (1)
+                        {
+                            if (j > high)
+                            {
+                                break;
+                            }
+                            tmp_arr[sub_ptr] = arr[j];
+                            ++j;
+                            ++sub_ptr;
+                        }
+                    }
+                    else
+                    {
+                        while (1)
+                        {
+                            if (i > mid)
+                            {
+                                break;
+                            }
+                            tmp_arr[sub_ptr] = arr[i];
+                            ++i;
+                            ++sub_ptr;
+                        }
+                    }
+
+                    break;
+                }
+
+                if (compare(arr[i], arr[j]))
+                {
+                    tmp_arr[sub_ptr] = arr[j];
+                    ++j;
+                }
+                else
+                {
+                    tmp_arr[sub_ptr] =  arr[i];
+                    ++i;
+                }
+                ++sub_ptr;
+            }
+
+            low = high + 1;
+            mid = low + sub_length - 1;//指针往下两个子序列走
+            if (mid >= elem_size)
+            {
+                break;
+            }
+            else
+            {
+                high = (mid + sub_length > elem_size) ? elem_size : (mid + sub_length);
+            }
+            
+        }
+
+        T* ptr = arr;
+        arr = tmp_arr;
+        tmp_arr = ptr;//副数组已完成合并，现在令主数组为副，令副为主
+
+        sub_length *= 2;//因为是二路归并，所以下一次归并的数组长度一定是原来的二倍
+    }
+
+    return 1;
+}
+
+
+template <typename T>
+bool Sort<T>::RadixSort(T* const& arr, const int& elem_size, bool (* compare)(T a, T b))
+{
+    linkQueue<T> Q[10];//这里表示在 10 进制下排序
+    linkQueue<T> output;
+
+    for (int i = 0; i < 10; ++i)
+    {
+        Q[i].initQueue();
+    }
+    output.initQueue();
+
+    int num_of_zero_bit = 0;//此变量用于记录是否已经遍历到了最大的位数
+    T base = 1;//基数
+    T val;//暂存每个数
+    T bit;//暂时存放每一位
+
+    for (int i = 1; i < elem_size + 1; ++i)//收集队列初始化
+    {
+        output.enQueue(arr[i]);
+    }
+
+    while (1)
+    {
+        if (num_of_zero_bit == elem_size)
+        {
+            break;
+        }
+
+        num_of_zero_bit = 0;
+
+        while (1)//第一步：将所有元素分散到辅助队列里面
+        {
+            if (output.isEmpty())
+            {
+                break;
+            }
+
+            val = output.deQueue();
+            bit = val / base % 10;
+            Q[bit].enQueue(val);
+
+            if (0 == bit && val / base < 10)
+            {
+                ++num_of_zero_bit;
+            }
+
+        }
+
+        for (int i = 0; i < 10; ++i)//第二步：将所有元素收集起来
+        {
+            while (1)
+            {
+                if (Q[i].isEmpty())
+                {
+                    break;
+                }
+                output.enQueue(Q[i].deQueue());
+            }
+        }
+
+        base *= 10;//最后再让基数乘 10 
+    }
+
+    if (compare(1, 0))
+    {
+        for (int i = 1; i < elem_size + 1; ++i)
+        {
+            arr[i] = output.deQueue();
+        }
+    }
+    else
+    {
+        for (int i = elem_size; i > 0; --i)
+        {
+            arr[i] = output.deQueue();
+        }
+    }
+    return 1;
+}
+
 
 template <typename T>
 int Sort<T>::QuickSort_Partition(T* const& arr, int low, int high, bool (* compare)(T a, T b))//注意这个子函数是分治而不是递归！
@@ -276,7 +455,6 @@ bool Sort<T>::Heap_Adjust(T* const& arr, int top, const int& elem_size, bool (* 
         {
             ++child;
         }
-
         if (!compare(arr[child], arr[top]))//如果孩子比父结点小（大），说明无须调整（注意，这里只能说明这三个结点无须调整！！！）
         {
             break;
@@ -286,9 +464,20 @@ bool Sort<T>::Heap_Adjust(T* const& arr, int top, const int& elem_size, bool (* 
         arr[0] = arr[top];
         arr[top] = arr[child];
         arr[child] = arr[0];
-
         top = child;
     }
 
+    return 1;
+}
+
+template <typename T>
+bool Sort<T>::Heap_Adjust_2(T* const& arr, int rear, bool (* compare)(T a, T b))
+{
+    for (; rear / 2 > 0 && compare(arr[rear], arr[rear / 2]); rear /= 2)
+    {
+        arr[0] = arr[rear];
+        arr[rear] = arr[rear / 2];
+        arr[rear / 2] = arr[0];
+    }
     return 1;
 }

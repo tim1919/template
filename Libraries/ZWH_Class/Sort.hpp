@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 template <typename T>
 class Sort
 {
@@ -26,12 +28,22 @@ public:
     //简单选择排序
     bool HeapSort(T* const& arr, const int& elem_size, bool (* compare)(T a, T b));
     //堆排序
+
+/****************************************四、归并排序*****************************************/
+    bool MergeSort(T*& arr, const int& elem_size, bool (* compare)(T a, T b));
+    //归并排序
+
+/****************************************五、基数排序*****************************************/
+    bool RadixSort(T* const& arr, const int& elem_size, bool (* compare)(T a, T b));
+    //基数排序
+    
 private:
     // T* elem = 0;
     // int size = 0;
 
     int QuickSort_Partition(T* const& arr, int low, int high, bool (* compare)(T a, T b));//快速排序函数里调用的分治方法
-    bool Heap_Adjust(T* const& arr, int top, const int& elem_size, bool (* compare)(T a, T b));//堆排序函数里调用的堆调整，
+    bool Heap_Adjust(T* const& arr, int top, const int& elem_size, bool (* compare)(T a, T b));//堆排序函数里调用的堆调整
+    bool Heap_Adjust_2(T* const& arr, int rear, bool (* compare)(T a, T b));
 };
 
 
