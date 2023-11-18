@@ -1,6 +1,6 @@
 #include <include.hpp>
 #include <string>
-
+#include <fstream>
 
 struct student
 {
@@ -12,24 +12,6 @@ struct student
 
 bool compare_id(student a, student b)
 {
-   // for (int i = 5; i >= 0; --i)
-   // {
-   //    if (a.id[i] == b.id[i])
-   //    {
-   //       --i;
-   //    }
-   //    else
-   //    {
-   //       return a.id[i] > b.id[i];
-   //    }
-   // }
-   // for (int i = 0; i < 6; ++i)
-   // {
-   //    if (a.id[i] == b.id[i])
-   //    {
-
-   //    }
-   // }
    int i = 0;
    while (1)
    {
@@ -59,8 +41,9 @@ bool compare_name(student a, student b)
    // else
    // {
       char ch_a, ch_b;
-      int i;
-      for (i = 0; i < 10; ++i)
+      int i = 0;
+
+      while (i < 10)
       {
          ch_a = std::tolower(a.name[i]);
          ch_b = std::tolower(b.name[i]);
@@ -143,6 +126,11 @@ int main(void)
    // myGraph.create_MGraph(WUXIANG, WUQUAN);
    // myGraph.BFS(PRINTF_GRAPH, 2);
    // return 0;
+   // std::ifstream fin;
+   // fin.open("../Data/ZWH_App/GetSimilarity/Similarity_Calculator/formatted/tmp.txt");
+   // std::cout << fin.is_open() << std::endl;
+
+
 
 /****************************************Graph*****************************************/
    // Graph<int> myGraph;
@@ -239,60 +227,96 @@ int main(void)
 
    //    printf("%.1f%%\n", 100 * myCalculator.cal_similarity());
    // }
+
+   File_Creator myCreator;
+   Similarity_Calculator myCalculator;
+
+   myCreator.init();
+
+   int num_of_file = 0;
+   std::cin >> num_of_file;
+
+   // std::stringstream strstr[num_of_file];
+   std::string file[num_of_file];//文件名
+   std::string file_handled[num_of_file];
+   for (int i = 0; i < num_of_file; ++i)
+   {
+      file[i] = myCreator.create("../");
+      file_handled[i] = myCalculator.input_and_format(file[i]);
+   }   
+
+   int num_of_cal = 0;
+   std::cin >> num_of_cal;
+   int toCal[num_of_cal][2] = {0};
+   for (int i = 0; i < num_of_cal; ++i)
+   {
+      std::cin >> toCal[i][0] >> toCal[i][1];
+   }
+   //输入准备完毕
+
+  
+   for (int i = 0; i < num_of_cal; ++i)
+   {
+      printf("%f%%\n", myCalculator.insert_and_cal(file_handled[toCal[i][0] - 1], file_handled[toCal[i][1] - 1]) * 100);
+      // std::cout << myCalculator.insert_and_cal(file_handled[toCal[i][0] - 1], file_handled[toCal[i][1] - 1]) << std::endl;
+   }
 /****************************************实验五*****************************************/
-   // student amy = {"000010", "Amy", 90};
-   // student j2 = {"000002", "James", 98};
-   // student j7 = {"000007", "James", 85};
-   // std::cout << compare_name(amy, j2) << std::endl;
-   // std::cout << compare_name(amy, j7) <<std::endl;
-   // std::cout << compare_name(j2, j7) << std::endl;
-   // std::cout << compare_name(j7, j2) << std::endl;
+   // // student amy = {"000010", "Amy", 90};
+   // // student j2 = {"000002", "James", 98};
+   // // student j7 = {"000007", "James", 85};
+   // // std::cout << compare_name(amy, j2) << std::endl;
+   // // std::cout << compare_name(amy, j7) <<std::endl;
+   // // std::cout << compare_name(j2, j7) << std::endl;
+   // // std::cout << compare_name(j7, j2) << std::endl;
 
-   int row = 0, col = 0;
-   std::cin >> row >> col;
+   // int row = 0, col = 0;
+   // std::cout << "Input: " << std::endl;
+   // std::cin >> row >> col;
 
-   student s[row + 1];
-   for (int i = 1; i < row + 1; ++i)
-   {
-      std::cin >> s[i].id;
+   // student s[row + 1];
+   // for (int i = 1; i < row + 1; ++i)
+   // {
+   //    std::cin >> s[i].id;
 
-      std::cin >> s[i].name;
-      // for (int ptr = s[i].name.length(); ptr < 10; ++ptr)
-      // {
-      //    s[i].name[ptr] = '\0';
-      // }
+   //    std::cin >> s[i].name;
+   //    // for (int ptr = s[i].name.length(); ptr < 10; ++ptr)
+   //    // {
+   //    //    s[i].name[ptr] = '\0';
+   //    // }
 
-      std::cin >> s[i].score;
+   //    std::cin >> s[i].score;
       
-   }
+   // }
 
-   bool (* p)(student a, student b);
-   if (1 == col)
-   {
-      p = compare_id;
-   }
-   else if (2 == col)
-   {
-      p = compare_name;
-   }
-   else if (3 == col)
-   {
-      p = compare_score;
-   }
-   else
-   {
-      std::cout << "invalid value of col!" << std::endl;
-      return 0;
-   }
+   // bool (* p)(student a, student b);
+   // if (1 == col)
+   // {
+   //    p = compare_id;
+   // }
+   // else if (2 == col)
+   // {
+   //    p = compare_name;
+   // }
+   // else if (3 == col)
+   // {
+   //    p = compare_score;
+   // }
+   // else
+   // {
+   //    std::cout << "invalid value of col!" << std::endl;
+   //    return 0;
+   // }
 
 
-   Sort<student> mySorter;
-   mySorter.HeapSort(s, row, p);
+   // Sort<student> mySorter;
+   // mySorter.HeapSort(s, row, p);
 
-   for (int i = 1; i < row + 1; ++i)
-   {
-      std::cout << s[i].id << ' ' << s[i].name << ' ' << s[i].score << std::endl;
-   }
+
+   // std::cout << "Output: " << std::endl;
+   // for (int i = 1; i < row + 1; ++i)
+   // {
+   //    std::cout << s[i].id << ' ' << s[i].name << ' ' << s[i].score << std::endl;
+   // }
 
 /****************************************String*****************************************/
    // std::string s = "stringstream";
