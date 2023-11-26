@@ -2,88 +2,6 @@
 #include <string>
 #include <fstream>
 
-struct student
-{
-   char id[7];
-   char name[11];
-   int score;
-};
-
-
-bool compare_id(student a, student b)
-{
-   int i = 0;
-   while (1)
-   {
-      if (i > 5)
-      {
-         break;
-      }
-      if (a.id[i] == b.id[i])
-      {
-         ++i;
-      }
-      else
-      {
-         return a.id[i] > b.id[i];
-      }
-   }
-
-   return 0;
-}
-
-bool compare_name(student a, student b)
-{
-   // if (a.name == b.name)
-   // {
-   //    return compare_id(a, b);
-   // }
-   // else
-   // {
-      char ch_a, ch_b;
-      int i = 0;
-
-      while (i < 10)
-      {
-         ch_a = std::tolower(a.name[i]);
-         ch_b = std::tolower(b.name[i]);
-         if (ch_a == ch_b)
-         {
-            ++i;
-         }
-         else
-         {
-            // std::cout << "ch_a = " << ch_a << "ch_b = " << ch_b << std::endl;
-            return ch_a > ch_b;
-         }
-      }
-   // }
-
-   // int i = 0;
-   // char ch_a, ch_b;
-   // while (1)
-   // {
-   //    if (i >= a.name.length() || i >= b.name.length() || i >= 10)
-   //    {
-   //       break;
-   //    }
-   // }
-
-   // std::cout << "??" << std::endl;
-   return compare_id(a, b);
-}
-
-bool compare_score(student a, student b)
-{
-   if (a.score == b.score)
-   {
-      return compare_id(a, b);
-   }
-   else
-   {
-      return a.score > b.score;
-   }
-}
 
 int main(void)
 {
@@ -133,11 +51,11 @@ int main(void)
 
 
 /****************************************Graph*****************************************/
-   // Graph<int> myGraph;
-   // myGraph.init_MGraph(6);
-   // myGraph.create_MGraph(WUXIANG, DAIQUAN);
+   Graph<int> myGraph;
+   myGraph.init_MGraph(6);
+   myGraph.create_MGraph(WUXIANG, WUQUAN);
    // myGraph.Prim(2);
-   // myGraph.BFS(PRINTF_GRAPH, 2, myGraph.get_MST());
+   myGraph.BFS(PRINTF_GRAPH, 2, myGraph.get_Edge());
    // Graph<int> myGraph;
    // myGraph.init_MGraph(6);
    // myGraph.create_MGraph(YOUXIANG, DAIQUAN);
@@ -158,10 +76,10 @@ int main(void)
    // std::cout << myList.getElem_link(0) << myList.getElem_link(1) << std::endl;
 
 /****************************************Tree*****************************************/
-   // LinkBinaryTree<int> myTree;
-   // myTree.create_scanf(-1);
-   // // myTree.preOrder_loop(myTree.root(), PRINTF);
-   // myTree.levelOrder(myTree.root(), PRINTF);
+   Thread_BiTree<char> myTree;
+   myTree.create_scanf(myTree.root(), '#');
+   myTree.inOrder_Threading(myTree.root());
+   myTree.inOrder_traverse(myTree.root());
 /****************************************Sort*****************************************/
 
    // Sort<int> mySort;
@@ -193,73 +111,37 @@ int main(void)
 
 /****************************************实验四*****************************************/
    // File_Creator myCreator;
-   // myCreator.init();//文档创建器初始化
-
    // Similarity_Calculator myCalculator;
 
-   // std::cout << "input:" <<std::endl;
+   // myCreator.init();
 
    // int num_of_file = 0;
    // std::cin >> num_of_file;
+
+   // // std::stringstream strstr[num_of_file];
+   // std::string file[num_of_file];//文件名
+   // std::string file_handled[num_of_file];
    // for (int i = 0; i < num_of_file; ++i)
    // {
-   //    myCreator.create();
-   // }
+   //    file[i] = myCreator.create("../");
+   //    file_handled[i] = myCalculator.input_and_format(file[i]);
+   // }   
 
    // int num_of_cal = 0;
    // std::cin >> num_of_cal;
-   // int file[num_of_cal][2];
+   // int toCal[num_of_cal][2] = {0};
    // for (int i = 0; i < num_of_cal; ++i)
    // {
-   //    std::cin >> file[i][0] >> file[i][1];
+   //    std::cin >> toCal[i][0] >> toCal[i][1];
    // }
-
-   // std::cout << "output:" <<std::endl;
-
-   // for (int i = 0; i < num_of_cal; ++i)
-   // {
-   //    std::stringstream fname_1, fname_2;
-   //    fname_1 << file[i][0] << ".txt";
-   //    fname_2 << file[i][1] << ".txt";
-      
-   //    myCalculator.init();//初始化
-   //    myCalculator.input(fname_1.str(), fname_2.str());
-
-   //    printf("%.1f%%\n", 100 * myCalculator.cal_similarity());
-   // }
-
-   File_Creator myCreator;
-   Similarity_Calculator myCalculator;
-
-   myCreator.init();
-
-   int num_of_file = 0;
-   std::cin >> num_of_file;
-
-   // std::stringstream strstr[num_of_file];
-   std::string file[num_of_file];//文件名
-   std::string file_handled[num_of_file];
-   for (int i = 0; i < num_of_file; ++i)
-   {
-      file[i] = myCreator.create("../");
-      file_handled[i] = myCalculator.input_and_format(file[i]);
-   }   
-
-   int num_of_cal = 0;
-   std::cin >> num_of_cal;
-   int toCal[num_of_cal][2] = {0};
-   for (int i = 0; i < num_of_cal; ++i)
-   {
-      std::cin >> toCal[i][0] >> toCal[i][1];
-   }
-   //输入准备完毕
+   // //输入准备完毕
 
   
-   for (int i = 0; i < num_of_cal; ++i)
-   {
-      printf("%f%%\n", myCalculator.insert_and_cal(file_handled[toCal[i][0] - 1], file_handled[toCal[i][1] - 1]) * 100);
-      // std::cout << myCalculator.insert_and_cal(file_handled[toCal[i][0] - 1], file_handled[toCal[i][1] - 1]) << std::endl;
-   }
+   // for (int i = 0; i < num_of_cal; ++i)
+   // {
+   //    printf("%f%%\n", myCalculator.insert_and_cal(file_handled[toCal[i][0] - 1], file_handled[toCal[i][1] - 1]) * 100);
+   //    // std::cout << myCalculator.insert_and_cal(file_handled[toCal[i][0] - 1], file_handled[toCal[i][1] - 1]) << std::endl;
+   // }
 /****************************************实验五*****************************************/
    // // student amy = {"000010", "Amy", 90};
    // // student j2 = {"000002", "James", 98};

@@ -9,6 +9,16 @@ struct Node
     Node* rchild;
 };
 
+template <typename T>
+struct Thread_Node
+{
+    T data;
+    bool lflag = 0;
+    Thread_Node* lchild = 0;
+    bool rflag = 0;
+    Thread_Node* rchild = 0;
+};
+
 template <typename ValueType>
 class SQBinaryTree
 {
@@ -83,6 +93,24 @@ private:
     Node<ValueType>* create_recurse(int depth);//递归   
     bool create_recurse_scanf(Node<ValueType>*& T, const ValueType& null);
 
+};
+
+template <typename T>
+class Thread_BiTree
+{
+public:
+    Thread_Node<T>*& root(void);
+
+    bool create_scanf(Thread_Node<T>*& root, const T& null);//输入先序序列以创建一棵普通二叉树
+    bool inOrder_Threading(Thread_Node<T>*& root);//中序线索化
+    Thread_Node<T>* get_inOrder_pre(Thread_Node<T>* const& p);//获取p的前驱结点
+    Thread_Node<T>* get_inOrder_next(Thread_Node<T>* const& p);//获取p的后继结点
+    bool inOrder_traverse(Thread_Node<T>* const& root);//线索化后的中序遍历
+    //test
+    bool test_print_preOrder_recurse(Thread_Node<T>* const& root);
+    bool test_print_inOrder_recurse(Thread_Node<T>* const& root);
+private:
+    Thread_Node<T>* Root = 0;
 };
 
 #include <BinaryTree.cpp>

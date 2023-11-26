@@ -575,3 +575,181 @@ void LinkBinaryTree<ValueType>::test(void)
 
 
 // }
+
+template <typename T>
+Thread_Node<T>*& Thread_BiTree<T>::root(void)
+{
+    return Root;
+}
+
+template <typename T>
+bool Thread_BiTree<T>::create_scanf(Thread_Node<T>*& root, const T& null)
+{
+    T val;
+    std::cin >> val;
+    if (null == val)
+    {
+        root = 0;
+    }
+    else
+    {
+        root = new Thread_Node<T>[1];
+        root->data = val;
+        root->lflag = 0;
+        root->rflag = 0;
+        create_scanf(root->lchild, null);
+        create_scanf(root->rchild, null);
+    }
+    return 1;
+}
+
+template <typename T>
+bool Thread_BiTree<T>::inOrder_Threading(Thread_Node<T>*& root)
+{
+    Thread_Node<T>* thrt = new Thread_Node<T>[1];//头结点
+    thrt->lflag = 0;
+    thrt->lchild = root;
+    root = thrt;
+
+    Thread_Node<T>* pre = root;
+    Thread_Node<T>* p = root->lchild;
+
+    // Thread_Node<T>* p = root;
+
+    Stack<Thread_Node<T>*> myStack;
+    myStack.initStack_SQ();
+    while (1)//中序非递归
+    {
+        if (myStack.isEmpty() && 0 == p)
+        {
+            break;
+        }
+
+        if (p)
+        {
+            myStack.push_back(p);
+            p = p->lchild;
+        }
+        else
+        {
+            p = myStack.pop_back();
+            std::cout << p->data;
+            if (0 == p->lchild)
+            {
+                p->lflag = 1;
+                p->lchild = pre;
+            }
+            if (0 == pre->rchild)
+            {
+                pre->rflag = 1;
+                pre->rchild = p;
+            }
+            pre = p;
+            p = p->rchild;
+        }
+    }
+
+    pre->rflag = 1;
+    pre->rchild = root;
+    root->rflag = 1;
+    root->rchild = pre;
+    return 1;
+}
+
+template <typename T>
+Thread_Node<T>* Thread_BiTree<T>::get_inOrder_pre(Thread_Node<T>* const& p)
+{
+    if (0 != p->lflag)
+    {
+        return p->lchild;
+    }
+    else
+    {
+        Thread_Node<T>* ptr = p->lchild;
+        while (1)
+        {
+            if (0 != ptr->rflag)
+            {
+                break;
+            }
+            ptr = ptr->rchild;
+        }
+        return ptr;
+    }
+}
+
+template <typename T>
+Thread_Node<T>* Thread_BiTree<T>::get_inOrder_next(Thread_Node<T>* const& p)
+{
+    if (0 != p->rflag)
+    {
+        return p->rchild;
+    }
+    else
+    {
+        Thread_Node<T>* ptr = p->rchild;
+        while (1)
+        {
+            if (0 != ptr->lflag)
+            {
+                break;
+            }
+            ptr = ptr->lchild;
+        }
+        return ptr;
+    }
+}
+
+template <typename T>
+bool Thread_BiTree<T>::inOrder_traverse(Thread_Node<T>* const& root)
+{
+    Thread_Node<T>* ptr = root->lchild;
+    while (1)//先找到中序的第一个结点
+    {
+        if (0 != ptr->lflag)
+        {
+            break;
+        }
+        ptr = ptr->lchild;
+    }
+
+
+    while (1)
+    {
+        if (root == ptr)
+        {
+            break;
+        }
+        std::cout << ptr->data << ' ' << std::endl;//即func(ptr);
+        ptr = get_inOrder_next(ptr);
+    }
+
+    return 1;
+}
+
+template <typename T>
+bool Thread_BiTree<T>::test_print_preOrder_recurse(Thread_Node<T>* const& root)
+{
+    if (0 != root)
+    {
+        std::cout << root->data << ' ';
+        test_print_preOrder_recurse(root->lchild);
+        
+        test_print_preOrder_recurse(root->rchild);
+    }
+
+    return 1;
+}
+
+template <typename T>
+bool Thread_BiTree<T>::test_print_inOrder_recurse(Thread_Node<T>* const& root)
+{
+    if (0 != root)
+    {
+        std::cout << root->lflag << ' ' << root->data << ' ' << root->rflag << std::endl;
+        test_print_inOrder_recurse(root->lchild);
+        test_print_inOrder_recurse(root->rchild);
+    }
+
+    return 1;
+}

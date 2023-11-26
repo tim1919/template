@@ -73,3 +73,4 @@ int KMP(const std::string& S, const std::string& T)//法二：KMP 算法
         return -1;
     }
 }
+
